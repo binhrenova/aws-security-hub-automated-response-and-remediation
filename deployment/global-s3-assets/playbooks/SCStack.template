@@ -1,0 +1,7194 @@
+{
+ "Description": "(DEV-SO0111P) AWS Security Hub Automated Response & Remediation SC 2.0.0 Compliance Pack - Admin Account, v1.5.1",
+ "AWSTemplateFormatVersion": "2010-09-09",
+ "Parameters": {
+  "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/Solutions/SO0111/OrchestratorArn"
+  },
+  "SC200AutoScaling1AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for SC 2.0.0 AutoScaling.1"
+  },
+  "SC200CloudTrail1AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for SC 2.0.0 CloudTrail.1"
+  },
+  "SC200CloudTrail2AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for SC 2.0.0 CloudTrail.2"
+  },
+  "SC200CloudTrail4AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for SC 2.0.0 CloudTrail.4"
+  },
+  "SC200CloudTrail5AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for SC 2.0.0 CloudTrail.5"
+  },
+  "SC200CloudTrail6AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for SC 2.0.0 CloudTrail.6"
+  },
+  "SC200CloudTrail7AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for SC 2.0.0 CloudTrail.7"
+  },
+  "SC200CloudWatch1AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for SC 2.0.0 CloudWatch.1"
+  },
+  "SC200CloudWatch2AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for SC 2.0.0 CloudWatch.2"
+  },
+  "SC200CloudWatch3AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for SC 2.0.0 CloudWatch.3"
+  },
+  "SC200CloudWatch4AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for SC 2.0.0 CloudWatch.4"
+  },
+  "SC200CloudWatch5AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for SC 2.0.0 CloudWatch.5"
+  },
+  "SC200CloudWatch6AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for SC 2.0.0 CloudWatch.6"
+  },
+  "SC200CloudWatch7AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for SC 2.0.0 CloudWatch.7"
+  },
+  "SC200CloudWatch8AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for SC 2.0.0 CloudWatch.8"
+  },
+  "SC200CloudWatch9AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for SC 2.0.0 CloudWatch.9"
+  },
+  "SC200CloudWatch10AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for SC 2.0.0 CloudWatch.10"
+  },
+  "SC200CloudWatch11AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for SC 2.0.0 CloudWatch.11"
+  },
+  "SC200CloudWatch12AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for SC 2.0.0 CloudWatch.12"
+  },
+  "SC200CloudWatch13AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for SC 2.0.0 CloudWatch.13"
+  },
+  "SC200CloudWatch14AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for SC 2.0.0 CloudWatch.14"
+  },
+  "SC200CodeBuild2AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for SC 2.0.0 CodeBuild.2"
+  },
+  "SC200Config1AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for SC 2.0.0 Config.1"
+  },
+  "SC200EC21AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for SC 2.0.0 EC2.1"
+  },
+  "SC200EC22AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for SC 2.0.0 EC2.2"
+  },
+  "SC200EC26AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for SC 2.0.0 EC2.6"
+  },
+  "SC200EC27AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for SC 2.0.0 EC2.7"
+  },
+  "SC200EC213AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for SC 2.0.0 EC2.13"
+  },
+  "SC200EC214AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for SC 2.0.0 EC2.14"
+  },
+  "SC200IAM3AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for SC 2.0.0 IAM.3"
+  },
+  "SC200IAM7AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for SC 2.0.0 IAM.7"
+  },
+  "SC200IAM8AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for SC 2.0.0 IAM.8"
+  },
+  "SC200IAM11AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for SC 2.0.0 IAM.11"
+  },
+  "SC200IAM12AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for SC 2.0.0 IAM.12"
+  },
+  "SC200IAM13AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for SC 2.0.0 IAM.13"
+  },
+  "SC200IAM14AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for SC 2.0.0 IAM.14"
+  },
+  "SC200IAM15AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for SC 2.0.0 IAM.15"
+  },
+  "SC200IAM16AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for SC 2.0.0 IAM.16"
+  },
+  "SC200IAM17AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for SC 2.0.0 IAM.17"
+  },
+  "SC200IAM18AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for SC 2.0.0 IAM.18"
+  },
+  "SC200KMS4AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for SC 2.0.0 KMS.4"
+  },
+  "SC200Lambda1AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for SC 2.0.0 Lambda.1"
+  },
+  "SC200RDS1AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for SC 2.0.0 RDS.1"
+  },
+  "SC200RDS2AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for SC 2.0.0 RDS.2"
+  },
+  "SC200RDS4AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for SC 2.0.0 RDS.4"
+  },
+  "SC200RDS5AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for SC 2.0.0 RDS.5"
+  },
+  "SC200RDS6AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for SC 2.0.0 RDS.6"
+  },
+  "SC200RDS7AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for SC 2.0.0 RDS.7"
+  },
+  "SC200RDS8AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for SC 2.0.0 RDS.8"
+  },
+  "SC200RDS13AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for SC 2.0.0 RDS.13"
+  },
+  "SC200RDS16AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for SC 2.0.0 RDS.16"
+  },
+  "SC200Redshift1AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for SC 2.0.0 Redshift.1"
+  },
+  "SC200Redshift3AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for SC 2.0.0 Redshift.3"
+  },
+  "SC200Redshift4AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for SC 2.0.0 Redshift.4"
+  },
+  "SC200Redshift6AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for SC 2.0.0 Redshift.6"
+  },
+  "SC200S31AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for SC 2.0.0 S3.1"
+  },
+  "SC200S32AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for SC 2.0.0 S3.2"
+  },
+  "SC200S33AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for SC 2.0.0 S3.3"
+  },
+  "SC200S34AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for SC 2.0.0 S3.4"
+  },
+  "SC200S35AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for SC 2.0.0 S3.5"
+  },
+  "SC200S36AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for SC 2.0.0 S3.6"
+  },
+  "SC200S38AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for SC 2.0.0 S3.8"
+  }
+ },
+ "Resources": {
+  "SCShortName2FDDCF16": {
+   "Type": "AWS::SSM::Parameter",
+   "Properties": {
+    "Type": "String",
+    "Value": "SC",
+    "Description": "Provides a short (1-12) character abbreviation for the standard.",
+    "Name": "/Solutions/SO0111/security-control/2.0.0/shortname"
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SCShortName/Resource"
+   }
+  },
+  "StandardVersionCB2C6951": {
+   "Type": "AWS::SSM::Parameter",
+   "Properties": {
+    "Type": "String",
+    "Value": "enabled",
+    "Description": "This parameter controls whether the SHARR step function will process findings for this version of the standard.",
+    "Name": "/Solutions/SO0111/security-control/2.0.0/status"
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/StandardVersion/Resource"
+   }
+  },
+  "SCAutoScaling1EventsRuleRoleDC13894E": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC AutoScaling.1/EventsRuleRole/Resource"
+   }
+  },
+  "SCAutoScaling1EventsRuleRoleDefaultPolicy27883681": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SCAutoScaling1EventsRuleRoleDefaultPolicy27883681",
+    "Roles": [
+     {
+      "Ref": "SCAutoScaling1EventsRuleRoleDC13894E"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC AutoScaling.1/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "SCAutoScaling1AutoEventRule3F0DD0D2": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate SC 2.0.0 AutoScaling.1 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        "security-control/AutoScaling.1"
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "SC_2.0.0_AutoScaling.1_AutoTrigger",
+    "State": {
+     "Ref": "SC200AutoScaling1AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "SCAutoScaling1EventsRuleRoleDC13894E",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC AutoScaling.1/AutoEventRule/Resource"
+   }
+  },
+  "SCCloudTrail1EventsRuleRole3BB3AE38": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC CloudTrail.1/EventsRuleRole/Resource"
+   }
+  },
+  "SCCloudTrail1EventsRuleRoleDefaultPolicyC6A9DE70": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SCCloudTrail1EventsRuleRoleDefaultPolicyC6A9DE70",
+    "Roles": [
+     {
+      "Ref": "SCCloudTrail1EventsRuleRole3BB3AE38"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC CloudTrail.1/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "SCCloudTrail1AutoEventRule911A318D": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate SC 2.0.0 CloudTrail.1 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        "security-control/CloudTrail.1"
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "SC_2.0.0_CloudTrail.1_AutoTrigger",
+    "State": {
+     "Ref": "SC200CloudTrail1AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "SCCloudTrail1EventsRuleRole3BB3AE38",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC CloudTrail.1/AutoEventRule/Resource"
+   }
+  },
+  "SCCloudTrail2EventsRuleRoleEB69231C": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC CloudTrail.2/EventsRuleRole/Resource"
+   }
+  },
+  "SCCloudTrail2EventsRuleRoleDefaultPolicyD4C3B02F": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SCCloudTrail2EventsRuleRoleDefaultPolicyD4C3B02F",
+    "Roles": [
+     {
+      "Ref": "SCCloudTrail2EventsRuleRoleEB69231C"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC CloudTrail.2/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "SCCloudTrail2AutoEventRuleC882296A": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate SC 2.0.0 CloudTrail.2 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        "security-control/CloudTrail.2"
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "SC_2.0.0_CloudTrail.2_AutoTrigger",
+    "State": {
+     "Ref": "SC200CloudTrail2AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "SCCloudTrail2EventsRuleRoleEB69231C",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC CloudTrail.2/AutoEventRule/Resource"
+   }
+  },
+  "SCCloudTrail4EventsRuleRoleE78E4FB3": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC CloudTrail.4/EventsRuleRole/Resource"
+   }
+  },
+  "SCCloudTrail4EventsRuleRoleDefaultPolicyCC69B867": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SCCloudTrail4EventsRuleRoleDefaultPolicyCC69B867",
+    "Roles": [
+     {
+      "Ref": "SCCloudTrail4EventsRuleRoleE78E4FB3"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC CloudTrail.4/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "SCCloudTrail4AutoEventRule6F6ECEF7": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate SC 2.0.0 CloudTrail.4 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        "security-control/CloudTrail.4"
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "SC_2.0.0_CloudTrail.4_AutoTrigger",
+    "State": {
+     "Ref": "SC200CloudTrail4AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "SCCloudTrail4EventsRuleRoleE78E4FB3",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC CloudTrail.4/AutoEventRule/Resource"
+   }
+  },
+  "SCCloudTrail5EventsRuleRole6FF26419": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC CloudTrail.5/EventsRuleRole/Resource"
+   }
+  },
+  "SCCloudTrail5EventsRuleRoleDefaultPolicyD98EE017": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SCCloudTrail5EventsRuleRoleDefaultPolicyD98EE017",
+    "Roles": [
+     {
+      "Ref": "SCCloudTrail5EventsRuleRole6FF26419"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC CloudTrail.5/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "SCCloudTrail5AutoEventRule371F97BD": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate SC 2.0.0 CloudTrail.5 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        "security-control/CloudTrail.5"
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "SC_2.0.0_CloudTrail.5_AutoTrigger",
+    "State": {
+     "Ref": "SC200CloudTrail5AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "SCCloudTrail5EventsRuleRole6FF26419",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC CloudTrail.5/AutoEventRule/Resource"
+   }
+  },
+  "SCCloudTrail6EventsRuleRole28173A2E": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC CloudTrail.6/EventsRuleRole/Resource"
+   }
+  },
+  "SCCloudTrail6EventsRuleRoleDefaultPolicyD72681B9": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SCCloudTrail6EventsRuleRoleDefaultPolicyD72681B9",
+    "Roles": [
+     {
+      "Ref": "SCCloudTrail6EventsRuleRole28173A2E"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC CloudTrail.6/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "SCCloudTrail6AutoEventRuleDD4D7A6A": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate SC 2.0.0 CloudTrail.6 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        "security-control/CloudTrail.6"
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "SC_2.0.0_CloudTrail.6_AutoTrigger",
+    "State": {
+     "Ref": "SC200CloudTrail6AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "SCCloudTrail6EventsRuleRole28173A2E",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC CloudTrail.6/AutoEventRule/Resource"
+   }
+  },
+  "SCCloudTrail7EventsRuleRoleEAAD0515": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC CloudTrail.7/EventsRuleRole/Resource"
+   }
+  },
+  "SCCloudTrail7EventsRuleRoleDefaultPolicyC54B4133": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SCCloudTrail7EventsRuleRoleDefaultPolicyC54B4133",
+    "Roles": [
+     {
+      "Ref": "SCCloudTrail7EventsRuleRoleEAAD0515"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC CloudTrail.7/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "SCCloudTrail7AutoEventRule13651461": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate SC 2.0.0 CloudTrail.7 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        "security-control/CloudTrail.7"
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "SC_2.0.0_CloudTrail.7_AutoTrigger",
+    "State": {
+     "Ref": "SC200CloudTrail7AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "SCCloudTrail7EventsRuleRoleEAAD0515",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC CloudTrail.7/AutoEventRule/Resource"
+   }
+  },
+  "SCCloudWatch1EventsRuleRole1E2ECB97": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC CloudWatch.1/EventsRuleRole/Resource"
+   }
+  },
+  "SCCloudWatch1EventsRuleRoleDefaultPolicy00EB6821": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SCCloudWatch1EventsRuleRoleDefaultPolicy00EB6821",
+    "Roles": [
+     {
+      "Ref": "SCCloudWatch1EventsRuleRole1E2ECB97"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC CloudWatch.1/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "SCCloudWatch1AutoEventRuleE42E3664": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate SC 2.0.0 CloudWatch.1 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        "security-control/CloudWatch.1"
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "SC_2.0.0_CloudWatch.1_AutoTrigger",
+    "State": {
+     "Ref": "SC200CloudWatch1AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "SCCloudWatch1EventsRuleRole1E2ECB97",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC CloudWatch.1/AutoEventRule/Resource"
+   }
+  },
+  "RemapSCCloudWatch21AA2341C": {
+   "Type": "AWS::SSM::Parameter",
+   "Properties": {
+    "Type": "String",
+    "Value": "CloudWatch.1",
+    "Description": "Remap the SC CloudWatch.2 finding to SC CloudWatch.1 remediation",
+    "Name": "/Solutions/SO0111/SC/2.0.0/CloudWatch.2/remap"
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/Remap SC CloudWatch.2/Resource"
+   }
+  },
+  "SCCloudWatch2EventsRuleRoleE5E056E1": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC CloudWatch.2/EventsRuleRole/Resource"
+   }
+  },
+  "SCCloudWatch2EventsRuleRoleDefaultPolicy6BA4BFA5": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SCCloudWatch2EventsRuleRoleDefaultPolicy6BA4BFA5",
+    "Roles": [
+     {
+      "Ref": "SCCloudWatch2EventsRuleRoleE5E056E1"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC CloudWatch.2/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "SCCloudWatch2AutoEventRule6C744711": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate SC 2.0.0 CloudWatch.2 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        "security-control/CloudWatch.2"
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "SC_2.0.0_CloudWatch.2_AutoTrigger",
+    "State": {
+     "Ref": "SC200CloudWatch2AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "SCCloudWatch2EventsRuleRoleE5E056E1",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC CloudWatch.2/AutoEventRule/Resource"
+   }
+  },
+  "RemapSCCloudWatch3D6EFBC6E": {
+   "Type": "AWS::SSM::Parameter",
+   "Properties": {
+    "Type": "String",
+    "Value": "CloudWatch.1",
+    "Description": "Remap the SC CloudWatch.3 finding to SC CloudWatch.1 remediation",
+    "Name": "/Solutions/SO0111/SC/2.0.0/CloudWatch.3/remap"
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/Remap SC CloudWatch.3/Resource"
+   }
+  },
+  "SCCloudWatch3EventsRuleRole603BCD8D": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC CloudWatch.3/EventsRuleRole/Resource"
+   }
+  },
+  "SCCloudWatch3EventsRuleRoleDefaultPolicy88F6A188": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SCCloudWatch3EventsRuleRoleDefaultPolicy88F6A188",
+    "Roles": [
+     {
+      "Ref": "SCCloudWatch3EventsRuleRole603BCD8D"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC CloudWatch.3/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "SCCloudWatch3AutoEventRule8458D9C4": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate SC 2.0.0 CloudWatch.3 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        "security-control/CloudWatch.3"
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "SC_2.0.0_CloudWatch.3_AutoTrigger",
+    "State": {
+     "Ref": "SC200CloudWatch3AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "SCCloudWatch3EventsRuleRole603BCD8D",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC CloudWatch.3/AutoEventRule/Resource"
+   }
+  },
+  "RemapSCCloudWatch460389B6A": {
+   "Type": "AWS::SSM::Parameter",
+   "Properties": {
+    "Type": "String",
+    "Value": "CloudWatch.1",
+    "Description": "Remap the SC CloudWatch.4 finding to SC CloudWatch.1 remediation",
+    "Name": "/Solutions/SO0111/SC/2.0.0/CloudWatch.4/remap"
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/Remap SC CloudWatch.4/Resource"
+   }
+  },
+  "SCCloudWatch4EventsRuleRole70C360B4": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC CloudWatch.4/EventsRuleRole/Resource"
+   }
+  },
+  "SCCloudWatch4EventsRuleRoleDefaultPolicy33E87882": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SCCloudWatch4EventsRuleRoleDefaultPolicy33E87882",
+    "Roles": [
+     {
+      "Ref": "SCCloudWatch4EventsRuleRole70C360B4"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC CloudWatch.4/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "SCCloudWatch4AutoEventRule0C8E70BE": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate SC 2.0.0 CloudWatch.4 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        "security-control/CloudWatch.4"
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "SC_2.0.0_CloudWatch.4_AutoTrigger",
+    "State": {
+     "Ref": "SC200CloudWatch4AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "SCCloudWatch4EventsRuleRole70C360B4",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC CloudWatch.4/AutoEventRule/Resource"
+   }
+  },
+  "RemapSCCloudWatch526DA2571": {
+   "Type": "AWS::SSM::Parameter",
+   "Properties": {
+    "Type": "String",
+    "Value": "CloudWatch.1",
+    "Description": "Remap the SC CloudWatch.5 finding to SC CloudWatch.1 remediation",
+    "Name": "/Solutions/SO0111/SC/2.0.0/CloudWatch.5/remap"
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/Remap SC CloudWatch.5/Resource"
+   }
+  },
+  "SCCloudWatch5EventsRuleRoleD678C0ED": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC CloudWatch.5/EventsRuleRole/Resource"
+   }
+  },
+  "SCCloudWatch5EventsRuleRoleDefaultPolicy024F5440": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SCCloudWatch5EventsRuleRoleDefaultPolicy024F5440",
+    "Roles": [
+     {
+      "Ref": "SCCloudWatch5EventsRuleRoleD678C0ED"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC CloudWatch.5/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "SCCloudWatch5AutoEventRule37A7208C": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate SC 2.0.0 CloudWatch.5 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        "security-control/CloudWatch.5"
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "SC_2.0.0_CloudWatch.5_AutoTrigger",
+    "State": {
+     "Ref": "SC200CloudWatch5AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "SCCloudWatch5EventsRuleRoleD678C0ED",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC CloudWatch.5/AutoEventRule/Resource"
+   }
+  },
+  "RemapSCCloudWatch658A9A50D": {
+   "Type": "AWS::SSM::Parameter",
+   "Properties": {
+    "Type": "String",
+    "Value": "CloudWatch.1",
+    "Description": "Remap the SC CloudWatch.6 finding to SC CloudWatch.1 remediation",
+    "Name": "/Solutions/SO0111/SC/2.0.0/CloudWatch.6/remap"
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/Remap SC CloudWatch.6/Resource"
+   }
+  },
+  "SCCloudWatch6EventsRuleRoleA98E050F": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC CloudWatch.6/EventsRuleRole/Resource"
+   }
+  },
+  "SCCloudWatch6EventsRuleRoleDefaultPolicy7321C1A5": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SCCloudWatch6EventsRuleRoleDefaultPolicy7321C1A5",
+    "Roles": [
+     {
+      "Ref": "SCCloudWatch6EventsRuleRoleA98E050F"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC CloudWatch.6/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "SCCloudWatch6AutoEventRule89026B1E": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate SC 2.0.0 CloudWatch.6 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        "security-control/CloudWatch.6"
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "SC_2.0.0_CloudWatch.6_AutoTrigger",
+    "State": {
+     "Ref": "SC200CloudWatch6AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "SCCloudWatch6EventsRuleRoleA98E050F",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC CloudWatch.6/AutoEventRule/Resource"
+   }
+  },
+  "RemapSCCloudWatch7925B26DA": {
+   "Type": "AWS::SSM::Parameter",
+   "Properties": {
+    "Type": "String",
+    "Value": "CloudWatch.1",
+    "Description": "Remap the SC CloudWatch.7 finding to SC CloudWatch.1 remediation",
+    "Name": "/Solutions/SO0111/SC/2.0.0/CloudWatch.7/remap"
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/Remap SC CloudWatch.7/Resource"
+   }
+  },
+  "SCCloudWatch7EventsRuleRoleF7ED9DB6": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC CloudWatch.7/EventsRuleRole/Resource"
+   }
+  },
+  "SCCloudWatch7EventsRuleRoleDefaultPolicyBC3B6307": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SCCloudWatch7EventsRuleRoleDefaultPolicyBC3B6307",
+    "Roles": [
+     {
+      "Ref": "SCCloudWatch7EventsRuleRoleF7ED9DB6"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC CloudWatch.7/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "SCCloudWatch7AutoEventRuleDCB0CB88": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate SC 2.0.0 CloudWatch.7 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        "security-control/CloudWatch.7"
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "SC_2.0.0_CloudWatch.7_AutoTrigger",
+    "State": {
+     "Ref": "SC200CloudWatch7AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "SCCloudWatch7EventsRuleRoleF7ED9DB6",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC CloudWatch.7/AutoEventRule/Resource"
+   }
+  },
+  "RemapSCCloudWatch85AEB1CB3": {
+   "Type": "AWS::SSM::Parameter",
+   "Properties": {
+    "Type": "String",
+    "Value": "CloudWatch.1",
+    "Description": "Remap the SC CloudWatch.8 finding to SC CloudWatch.1 remediation",
+    "Name": "/Solutions/SO0111/SC/2.0.0/CloudWatch.8/remap"
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/Remap SC CloudWatch.8/Resource"
+   }
+  },
+  "SCCloudWatch8EventsRuleRoleA157F386": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC CloudWatch.8/EventsRuleRole/Resource"
+   }
+  },
+  "SCCloudWatch8EventsRuleRoleDefaultPolicy960FE1F2": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SCCloudWatch8EventsRuleRoleDefaultPolicy960FE1F2",
+    "Roles": [
+     {
+      "Ref": "SCCloudWatch8EventsRuleRoleA157F386"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC CloudWatch.8/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "SCCloudWatch8AutoEventRuleB307FF0C": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate SC 2.0.0 CloudWatch.8 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        "security-control/CloudWatch.8"
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "SC_2.0.0_CloudWatch.8_AutoTrigger",
+    "State": {
+     "Ref": "SC200CloudWatch8AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "SCCloudWatch8EventsRuleRoleA157F386",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC CloudWatch.8/AutoEventRule/Resource"
+   }
+  },
+  "RemapSCCloudWatch916F507F0": {
+   "Type": "AWS::SSM::Parameter",
+   "Properties": {
+    "Type": "String",
+    "Value": "CloudWatch.1",
+    "Description": "Remap the SC CloudWatch.9 finding to SC CloudWatch.1 remediation",
+    "Name": "/Solutions/SO0111/SC/2.0.0/CloudWatch.9/remap"
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/Remap SC CloudWatch.9/Resource"
+   }
+  },
+  "SCCloudWatch9EventsRuleRole79FBD0EB": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC CloudWatch.9/EventsRuleRole/Resource"
+   }
+  },
+  "SCCloudWatch9EventsRuleRoleDefaultPolicy178DAC8D": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SCCloudWatch9EventsRuleRoleDefaultPolicy178DAC8D",
+    "Roles": [
+     {
+      "Ref": "SCCloudWatch9EventsRuleRole79FBD0EB"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC CloudWatch.9/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "SCCloudWatch9AutoEventRule6087A25F": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate SC 2.0.0 CloudWatch.9 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        "security-control/CloudWatch.9"
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "SC_2.0.0_CloudWatch.9_AutoTrigger",
+    "State": {
+     "Ref": "SC200CloudWatch9AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "SCCloudWatch9EventsRuleRole79FBD0EB",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC CloudWatch.9/AutoEventRule/Resource"
+   }
+  },
+  "RemapSCCloudWatch1050FC1784": {
+   "Type": "AWS::SSM::Parameter",
+   "Properties": {
+    "Type": "String",
+    "Value": "CloudWatch.1",
+    "Description": "Remap the SC CloudWatch.10 finding to SC CloudWatch.1 remediation",
+    "Name": "/Solutions/SO0111/SC/2.0.0/CloudWatch.10/remap"
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/Remap SC CloudWatch.10/Resource"
+   }
+  },
+  "SCCloudWatch10EventsRuleRoleE907131A": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC CloudWatch.10/EventsRuleRole/Resource"
+   }
+  },
+  "SCCloudWatch10EventsRuleRoleDefaultPolicyCFA8C910": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SCCloudWatch10EventsRuleRoleDefaultPolicyCFA8C910",
+    "Roles": [
+     {
+      "Ref": "SCCloudWatch10EventsRuleRoleE907131A"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC CloudWatch.10/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "SCCloudWatch10AutoEventRule6D5D40A0": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate SC 2.0.0 CloudWatch.10 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        "security-control/CloudWatch.10"
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "SC_2.0.0_CloudWatch.10_AutoTrigger",
+    "State": {
+     "Ref": "SC200CloudWatch10AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "SCCloudWatch10EventsRuleRoleE907131A",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC CloudWatch.10/AutoEventRule/Resource"
+   }
+  },
+  "RemapSCCloudWatch11BDFCF00A": {
+   "Type": "AWS::SSM::Parameter",
+   "Properties": {
+    "Type": "String",
+    "Value": "CloudWatch.1",
+    "Description": "Remap the SC CloudWatch.11 finding to SC CloudWatch.1 remediation",
+    "Name": "/Solutions/SO0111/SC/2.0.0/CloudWatch.11/remap"
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/Remap SC CloudWatch.11/Resource"
+   }
+  },
+  "SCCloudWatch11EventsRuleRoleDAD945E8": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC CloudWatch.11/EventsRuleRole/Resource"
+   }
+  },
+  "SCCloudWatch11EventsRuleRoleDefaultPolicyDF1B109E": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SCCloudWatch11EventsRuleRoleDefaultPolicyDF1B109E",
+    "Roles": [
+     {
+      "Ref": "SCCloudWatch11EventsRuleRoleDAD945E8"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC CloudWatch.11/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "SCCloudWatch11AutoEventRule5B52FC9F": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate SC 2.0.0 CloudWatch.11 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        "security-control/CloudWatch.11"
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "SC_2.0.0_CloudWatch.11_AutoTrigger",
+    "State": {
+     "Ref": "SC200CloudWatch11AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "SCCloudWatch11EventsRuleRoleDAD945E8",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC CloudWatch.11/AutoEventRule/Resource"
+   }
+  },
+  "RemapSCCloudWatch1213295701": {
+   "Type": "AWS::SSM::Parameter",
+   "Properties": {
+    "Type": "String",
+    "Value": "CloudWatch.1",
+    "Description": "Remap the SC CloudWatch.12 finding to SC CloudWatch.1 remediation",
+    "Name": "/Solutions/SO0111/SC/2.0.0/CloudWatch.12/remap"
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/Remap SC CloudWatch.12/Resource"
+   }
+  },
+  "SCCloudWatch12EventsRuleRole663B1592": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC CloudWatch.12/EventsRuleRole/Resource"
+   }
+  },
+  "SCCloudWatch12EventsRuleRoleDefaultPolicy6D75BCE2": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SCCloudWatch12EventsRuleRoleDefaultPolicy6D75BCE2",
+    "Roles": [
+     {
+      "Ref": "SCCloudWatch12EventsRuleRole663B1592"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC CloudWatch.12/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "SCCloudWatch12AutoEventRule9C1D0E36": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate SC 2.0.0 CloudWatch.12 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        "security-control/CloudWatch.12"
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "SC_2.0.0_CloudWatch.12_AutoTrigger",
+    "State": {
+     "Ref": "SC200CloudWatch12AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "SCCloudWatch12EventsRuleRole663B1592",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC CloudWatch.12/AutoEventRule/Resource"
+   }
+  },
+  "RemapSCCloudWatch13F1FB012C": {
+   "Type": "AWS::SSM::Parameter",
+   "Properties": {
+    "Type": "String",
+    "Value": "CloudWatch.1",
+    "Description": "Remap the SC CloudWatch.13 finding to SC CloudWatch.1 remediation",
+    "Name": "/Solutions/SO0111/SC/2.0.0/CloudWatch.13/remap"
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/Remap SC CloudWatch.13/Resource"
+   }
+  },
+  "SCCloudWatch13EventsRuleRoleDAE29D84": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC CloudWatch.13/EventsRuleRole/Resource"
+   }
+  },
+  "SCCloudWatch13EventsRuleRoleDefaultPolicyDBE4ADDC": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SCCloudWatch13EventsRuleRoleDefaultPolicyDBE4ADDC",
+    "Roles": [
+     {
+      "Ref": "SCCloudWatch13EventsRuleRoleDAE29D84"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC CloudWatch.13/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "SCCloudWatch13AutoEventRuleB3A367EF": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate SC 2.0.0 CloudWatch.13 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        "security-control/CloudWatch.13"
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "SC_2.0.0_CloudWatch.13_AutoTrigger",
+    "State": {
+     "Ref": "SC200CloudWatch13AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "SCCloudWatch13EventsRuleRoleDAE29D84",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC CloudWatch.13/AutoEventRule/Resource"
+   }
+  },
+  "RemapSCCloudWatch14765785D7": {
+   "Type": "AWS::SSM::Parameter",
+   "Properties": {
+    "Type": "String",
+    "Value": "CloudWatch.1",
+    "Description": "Remap the SC CloudWatch.14 finding to SC CloudWatch.1 remediation",
+    "Name": "/Solutions/SO0111/SC/2.0.0/CloudWatch.14/remap"
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/Remap SC CloudWatch.14/Resource"
+   }
+  },
+  "SCCloudWatch14EventsRuleRoleC1A68DBF": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC CloudWatch.14/EventsRuleRole/Resource"
+   }
+  },
+  "SCCloudWatch14EventsRuleRoleDefaultPolicy4A7EFEA4": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SCCloudWatch14EventsRuleRoleDefaultPolicy4A7EFEA4",
+    "Roles": [
+     {
+      "Ref": "SCCloudWatch14EventsRuleRoleC1A68DBF"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC CloudWatch.14/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "SCCloudWatch14AutoEventRuleD128DF0E": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate SC 2.0.0 CloudWatch.14 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        "security-control/CloudWatch.14"
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "SC_2.0.0_CloudWatch.14_AutoTrigger",
+    "State": {
+     "Ref": "SC200CloudWatch14AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "SCCloudWatch14EventsRuleRoleC1A68DBF",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC CloudWatch.14/AutoEventRule/Resource"
+   }
+  },
+  "SCCodeBuild2EventsRuleRole78ABDCAE": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC CodeBuild.2/EventsRuleRole/Resource"
+   }
+  },
+  "SCCodeBuild2EventsRuleRoleDefaultPolicy50FE591F": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SCCodeBuild2EventsRuleRoleDefaultPolicy50FE591F",
+    "Roles": [
+     {
+      "Ref": "SCCodeBuild2EventsRuleRole78ABDCAE"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC CodeBuild.2/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "SCCodeBuild2AutoEventRule6F7717BE": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate SC 2.0.0 CodeBuild.2 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        "security-control/CodeBuild.2"
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "SC_2.0.0_CodeBuild.2_AutoTrigger",
+    "State": {
+     "Ref": "SC200CodeBuild2AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "SCCodeBuild2EventsRuleRole78ABDCAE",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC CodeBuild.2/AutoEventRule/Resource"
+   }
+  },
+  "SCConfig1EventsRuleRole5D06808C": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC Config.1/EventsRuleRole/Resource"
+   }
+  },
+  "SCConfig1EventsRuleRoleDefaultPolicy55B9C6CA": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SCConfig1EventsRuleRoleDefaultPolicy55B9C6CA",
+    "Roles": [
+     {
+      "Ref": "SCConfig1EventsRuleRole5D06808C"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC Config.1/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "SCConfig1AutoEventRuleF56627A9": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate SC 2.0.0 Config.1 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        "security-control/Config.1"
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "SC_2.0.0_Config.1_AutoTrigger",
+    "State": {
+     "Ref": "SC200Config1AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "SCConfig1EventsRuleRole5D06808C",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC Config.1/AutoEventRule/Resource"
+   }
+  },
+  "SCEC21EventsRuleRoleA85C3323": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC EC2.1/EventsRuleRole/Resource"
+   }
+  },
+  "SCEC21EventsRuleRoleDefaultPolicy5F76EC70": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SCEC21EventsRuleRoleDefaultPolicy5F76EC70",
+    "Roles": [
+     {
+      "Ref": "SCEC21EventsRuleRoleA85C3323"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC EC2.1/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "SCEC21AutoEventRule77ADF3C1": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate SC 2.0.0 EC2.1 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        "security-control/EC2.1"
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "SC_2.0.0_EC2.1_AutoTrigger",
+    "State": {
+     "Ref": "SC200EC21AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "SCEC21EventsRuleRoleA85C3323",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC EC2.1/AutoEventRule/Resource"
+   }
+  },
+  "SCEC22EventsRuleRoleF84665D0": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC EC2.2/EventsRuleRole/Resource"
+   }
+  },
+  "SCEC22EventsRuleRoleDefaultPolicy891D2E6D": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SCEC22EventsRuleRoleDefaultPolicy891D2E6D",
+    "Roles": [
+     {
+      "Ref": "SCEC22EventsRuleRoleF84665D0"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC EC2.2/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "SCEC22AutoEventRule744CC526": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate SC 2.0.0 EC2.2 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        "security-control/EC2.2"
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "SC_2.0.0_EC2.2_AutoTrigger",
+    "State": {
+     "Ref": "SC200EC22AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "SCEC22EventsRuleRoleF84665D0",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC EC2.2/AutoEventRule/Resource"
+   }
+  },
+  "SCEC26EventsRuleRoleAF8191A3": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC EC2.6/EventsRuleRole/Resource"
+   }
+  },
+  "SCEC26EventsRuleRoleDefaultPolicy8068F821": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SCEC26EventsRuleRoleDefaultPolicy8068F821",
+    "Roles": [
+     {
+      "Ref": "SCEC26EventsRuleRoleAF8191A3"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC EC2.6/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "SCEC26AutoEventRule6878354D": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate SC 2.0.0 EC2.6 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        "security-control/EC2.6"
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "SC_2.0.0_EC2.6_AutoTrigger",
+    "State": {
+     "Ref": "SC200EC26AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "SCEC26EventsRuleRoleAF8191A3",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC EC2.6/AutoEventRule/Resource"
+   }
+  },
+  "SCEC27EventsRuleRoleB87E856F": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC EC2.7/EventsRuleRole/Resource"
+   }
+  },
+  "SCEC27EventsRuleRoleDefaultPolicyCE7CBED8": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SCEC27EventsRuleRoleDefaultPolicyCE7CBED8",
+    "Roles": [
+     {
+      "Ref": "SCEC27EventsRuleRoleB87E856F"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC EC2.7/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "SCEC27AutoEventRuleBAE415D6": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate SC 2.0.0 EC2.7 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        "security-control/EC2.7"
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "SC_2.0.0_EC2.7_AutoTrigger",
+    "State": {
+     "Ref": "SC200EC27AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "SCEC27EventsRuleRoleB87E856F",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC EC2.7/AutoEventRule/Resource"
+   }
+  },
+  "SCEC213EventsRuleRole511DB297": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC EC2.13/EventsRuleRole/Resource"
+   }
+  },
+  "SCEC213EventsRuleRoleDefaultPolicy461A3108": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SCEC213EventsRuleRoleDefaultPolicy461A3108",
+    "Roles": [
+     {
+      "Ref": "SCEC213EventsRuleRole511DB297"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC EC2.13/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "SCEC213AutoEventRule8D6D5712": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate SC 2.0.0 EC2.13 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        "security-control/EC2.13"
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "SC_2.0.0_EC2.13_AutoTrigger",
+    "State": {
+     "Ref": "SC200EC213AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "SCEC213EventsRuleRole511DB297",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC EC2.13/AutoEventRule/Resource"
+   }
+  },
+  "RemapSCEC2149F46BFF8": {
+   "Type": "AWS::SSM::Parameter",
+   "Properties": {
+    "Type": "String",
+    "Value": "EC2.13",
+    "Description": "Remap the SC EC2.14 finding to SC EC2.13 remediation",
+    "Name": "/Solutions/SO0111/SC/2.0.0/EC2.14/remap"
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/Remap SC EC2.14/Resource"
+   }
+  },
+  "SCEC214EventsRuleRoleB50DFAD4": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC EC2.14/EventsRuleRole/Resource"
+   }
+  },
+  "SCEC214EventsRuleRoleDefaultPolicyEECCF7AE": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SCEC214EventsRuleRoleDefaultPolicyEECCF7AE",
+    "Roles": [
+     {
+      "Ref": "SCEC214EventsRuleRoleB50DFAD4"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC EC2.14/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "SCEC214AutoEventRule6C02D226": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate SC 2.0.0 EC2.14 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        "security-control/EC2.14"
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "SC_2.0.0_EC2.14_AutoTrigger",
+    "State": {
+     "Ref": "SC200EC214AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "SCEC214EventsRuleRoleB50DFAD4",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC EC2.14/AutoEventRule/Resource"
+   }
+  },
+  "SCIAM3EventsRuleRole8DE61610": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC IAM.3/EventsRuleRole/Resource"
+   }
+  },
+  "SCIAM3EventsRuleRoleDefaultPolicyA1A54E7E": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SCIAM3EventsRuleRoleDefaultPolicyA1A54E7E",
+    "Roles": [
+     {
+      "Ref": "SCIAM3EventsRuleRole8DE61610"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC IAM.3/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "SCIAM3AutoEventRuleE222787F": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate SC 2.0.0 IAM.3 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        "security-control/IAM.3"
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "SC_2.0.0_IAM.3_AutoTrigger",
+    "State": {
+     "Ref": "SC200IAM3AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "SCIAM3EventsRuleRole8DE61610",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC IAM.3/AutoEventRule/Resource"
+   }
+  },
+  "SCIAM7EventsRuleRoleA93E12F9": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC IAM.7/EventsRuleRole/Resource"
+   }
+  },
+  "SCIAM7EventsRuleRoleDefaultPolicy77D5C328": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SCIAM7EventsRuleRoleDefaultPolicy77D5C328",
+    "Roles": [
+     {
+      "Ref": "SCIAM7EventsRuleRoleA93E12F9"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC IAM.7/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "SCIAM7AutoEventRuleD8393850": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate SC 2.0.0 IAM.7 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        "security-control/IAM.7"
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "SC_2.0.0_IAM.7_AutoTrigger",
+    "State": {
+     "Ref": "SC200IAM7AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "SCIAM7EventsRuleRoleA93E12F9",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC IAM.7/AutoEventRule/Resource"
+   }
+  },
+  "SCIAM8EventsRuleRole1E17A44F": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC IAM.8/EventsRuleRole/Resource"
+   }
+  },
+  "SCIAM8EventsRuleRoleDefaultPolicy9F2ABA02": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SCIAM8EventsRuleRoleDefaultPolicy9F2ABA02",
+    "Roles": [
+     {
+      "Ref": "SCIAM8EventsRuleRole1E17A44F"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC IAM.8/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "SCIAM8AutoEventRule8A3F2EBE": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate SC 2.0.0 IAM.8 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        "security-control/IAM.8"
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "SC_2.0.0_IAM.8_AutoTrigger",
+    "State": {
+     "Ref": "SC200IAM8AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "SCIAM8EventsRuleRole1E17A44F",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC IAM.8/AutoEventRule/Resource"
+   }
+  },
+  "RemapSCIAM110EB2DA9C": {
+   "Type": "AWS::SSM::Parameter",
+   "Properties": {
+    "Type": "String",
+    "Value": "IAM.7",
+    "Description": "Remap the SC IAM.11 finding to SC IAM.7 remediation",
+    "Name": "/Solutions/SO0111/SC/2.0.0/IAM.11/remap"
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/Remap SC IAM.11/Resource"
+   }
+  },
+  "SCIAM11EventsRuleRole4F5ED073": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC IAM.11/EventsRuleRole/Resource"
+   }
+  },
+  "SCIAM11EventsRuleRoleDefaultPolicy3A8A3D2F": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SCIAM11EventsRuleRoleDefaultPolicy3A8A3D2F",
+    "Roles": [
+     {
+      "Ref": "SCIAM11EventsRuleRole4F5ED073"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC IAM.11/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "SCIAM11AutoEventRuleE70978C2": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate SC 2.0.0 IAM.11 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        "security-control/IAM.11"
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "SC_2.0.0_IAM.11_AutoTrigger",
+    "State": {
+     "Ref": "SC200IAM11AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "SCIAM11EventsRuleRole4F5ED073",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC IAM.11/AutoEventRule/Resource"
+   }
+  },
+  "RemapSCIAM1261602355": {
+   "Type": "AWS::SSM::Parameter",
+   "Properties": {
+    "Type": "String",
+    "Value": "IAM.7",
+    "Description": "Remap the SC IAM.12 finding to SC IAM.7 remediation",
+    "Name": "/Solutions/SO0111/SC/2.0.0/IAM.12/remap"
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/Remap SC IAM.12/Resource"
+   }
+  },
+  "SCIAM12EventsRuleRoleF45FB7BA": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC IAM.12/EventsRuleRole/Resource"
+   }
+  },
+  "SCIAM12EventsRuleRoleDefaultPolicy22622E47": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SCIAM12EventsRuleRoleDefaultPolicy22622E47",
+    "Roles": [
+     {
+      "Ref": "SCIAM12EventsRuleRoleF45FB7BA"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC IAM.12/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "SCIAM12AutoEventRuleC0F138CA": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate SC 2.0.0 IAM.12 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        "security-control/IAM.12"
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "SC_2.0.0_IAM.12_AutoTrigger",
+    "State": {
+     "Ref": "SC200IAM12AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "SCIAM12EventsRuleRoleF45FB7BA",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC IAM.12/AutoEventRule/Resource"
+   }
+  },
+  "RemapSCIAM132E247AB3": {
+   "Type": "AWS::SSM::Parameter",
+   "Properties": {
+    "Type": "String",
+    "Value": "IAM.7",
+    "Description": "Remap the SC IAM.13 finding to SC IAM.7 remediation",
+    "Name": "/Solutions/SO0111/SC/2.0.0/IAM.13/remap"
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/Remap SC IAM.13/Resource"
+   }
+  },
+  "SCIAM13EventsRuleRole61231DEF": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC IAM.13/EventsRuleRole/Resource"
+   }
+  },
+  "SCIAM13EventsRuleRoleDefaultPolicy32E86C3D": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SCIAM13EventsRuleRoleDefaultPolicy32E86C3D",
+    "Roles": [
+     {
+      "Ref": "SCIAM13EventsRuleRole61231DEF"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC IAM.13/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "SCIAM13AutoEventRule25C7B39E": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate SC 2.0.0 IAM.13 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        "security-control/IAM.13"
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "SC_2.0.0_IAM.13_AutoTrigger",
+    "State": {
+     "Ref": "SC200IAM13AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "SCIAM13EventsRuleRole61231DEF",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC IAM.13/AutoEventRule/Resource"
+   }
+  },
+  "RemapSCIAM14A952CC1F": {
+   "Type": "AWS::SSM::Parameter",
+   "Properties": {
+    "Type": "String",
+    "Value": "IAM.7",
+    "Description": "Remap the SC IAM.14 finding to SC IAM.7 remediation",
+    "Name": "/Solutions/SO0111/SC/2.0.0/IAM.14/remap"
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/Remap SC IAM.14/Resource"
+   }
+  },
+  "SCIAM14EventsRuleRole18BB12D7": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC IAM.14/EventsRuleRole/Resource"
+   }
+  },
+  "SCIAM14EventsRuleRoleDefaultPolicy1F1C9593": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SCIAM14EventsRuleRoleDefaultPolicy1F1C9593",
+    "Roles": [
+     {
+      "Ref": "SCIAM14EventsRuleRole18BB12D7"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC IAM.14/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "SCIAM14AutoEventRuleAD8D0896": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate SC 2.0.0 IAM.14 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        "security-control/IAM.14"
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "SC_2.0.0_IAM.14_AutoTrigger",
+    "State": {
+     "Ref": "SC200IAM14AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "SCIAM14EventsRuleRole18BB12D7",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC IAM.14/AutoEventRule/Resource"
+   }
+  },
+  "RemapSCIAM15D1D99041": {
+   "Type": "AWS::SSM::Parameter",
+   "Properties": {
+    "Type": "String",
+    "Value": "IAM.7",
+    "Description": "Remap the SC IAM.15 finding to SC IAM.7 remediation",
+    "Name": "/Solutions/SO0111/SC/2.0.0/IAM.15/remap"
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/Remap SC IAM.15/Resource"
+   }
+  },
+  "SCIAM15EventsRuleRole732C178A": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC IAM.15/EventsRuleRole/Resource"
+   }
+  },
+  "SCIAM15EventsRuleRoleDefaultPolicyB4E0F57E": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SCIAM15EventsRuleRoleDefaultPolicyB4E0F57E",
+    "Roles": [
+     {
+      "Ref": "SCIAM15EventsRuleRole732C178A"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC IAM.15/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "SCIAM15AutoEventRule0F9206F8": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate SC 2.0.0 IAM.15 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        "security-control/IAM.15"
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "SC_2.0.0_IAM.15_AutoTrigger",
+    "State": {
+     "Ref": "SC200IAM15AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "SCIAM15EventsRuleRole732C178A",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC IAM.15/AutoEventRule/Resource"
+   }
+  },
+  "RemapSCIAM166EA75AE7": {
+   "Type": "AWS::SSM::Parameter",
+   "Properties": {
+    "Type": "String",
+    "Value": "IAM.7",
+    "Description": "Remap the SC IAM.16 finding to SC IAM.7 remediation",
+    "Name": "/Solutions/SO0111/SC/2.0.0/IAM.16/remap"
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/Remap SC IAM.16/Resource"
+   }
+  },
+  "SCIAM16EventsRuleRole88C6F4DA": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC IAM.16/EventsRuleRole/Resource"
+   }
+  },
+  "SCIAM16EventsRuleRoleDefaultPolicy9B38D663": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SCIAM16EventsRuleRoleDefaultPolicy9B38D663",
+    "Roles": [
+     {
+      "Ref": "SCIAM16EventsRuleRole88C6F4DA"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC IAM.16/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "SCIAM16AutoEventRule9AD70AA5": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate SC 2.0.0 IAM.16 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        "security-control/IAM.16"
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "SC_2.0.0_IAM.16_AutoTrigger",
+    "State": {
+     "Ref": "SC200IAM16AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "SCIAM16EventsRuleRole88C6F4DA",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC IAM.16/AutoEventRule/Resource"
+   }
+  },
+  "RemapSCIAM179EDC068B": {
+   "Type": "AWS::SSM::Parameter",
+   "Properties": {
+    "Type": "String",
+    "Value": "IAM.7",
+    "Description": "Remap the SC IAM.17 finding to SC IAM.7 remediation",
+    "Name": "/Solutions/SO0111/SC/2.0.0/IAM.17/remap"
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/Remap SC IAM.17/Resource"
+   }
+  },
+  "SCIAM17EventsRuleRole5F12B4A3": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC IAM.17/EventsRuleRole/Resource"
+   }
+  },
+  "SCIAM17EventsRuleRoleDefaultPolicy5035E824": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SCIAM17EventsRuleRoleDefaultPolicy5035E824",
+    "Roles": [
+     {
+      "Ref": "SCIAM17EventsRuleRole5F12B4A3"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC IAM.17/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "SCIAM17AutoEventRuleB95A1E24": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate SC 2.0.0 IAM.17 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        "security-control/IAM.17"
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "SC_2.0.0_IAM.17_AutoTrigger",
+    "State": {
+     "Ref": "SC200IAM17AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "SCIAM17EventsRuleRole5F12B4A3",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC IAM.17/AutoEventRule/Resource"
+   }
+  },
+  "SCIAM18EventsRuleRoleA123003C": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC IAM.18/EventsRuleRole/Resource"
+   }
+  },
+  "SCIAM18EventsRuleRoleDefaultPolicyC0E3D2CD": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SCIAM18EventsRuleRoleDefaultPolicyC0E3D2CD",
+    "Roles": [
+     {
+      "Ref": "SCIAM18EventsRuleRoleA123003C"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC IAM.18/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "SCIAM18AutoEventRule56481B7A": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate SC 2.0.0 IAM.18 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        "security-control/IAM.18"
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "SC_2.0.0_IAM.18_AutoTrigger",
+    "State": {
+     "Ref": "SC200IAM18AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "SCIAM18EventsRuleRoleA123003C",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC IAM.18/AutoEventRule/Resource"
+   }
+  },
+  "SCKMS4EventsRuleRoleB5023B81": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC KMS.4/EventsRuleRole/Resource"
+   }
+  },
+  "SCKMS4EventsRuleRoleDefaultPolicy2B177B0E": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SCKMS4EventsRuleRoleDefaultPolicy2B177B0E",
+    "Roles": [
+     {
+      "Ref": "SCKMS4EventsRuleRoleB5023B81"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC KMS.4/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "SCKMS4AutoEventRuleADAAE91B": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate SC 2.0.0 KMS.4 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        "security-control/KMS.4"
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "SC_2.0.0_KMS.4_AutoTrigger",
+    "State": {
+     "Ref": "SC200KMS4AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "SCKMS4EventsRuleRoleB5023B81",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC KMS.4/AutoEventRule/Resource"
+   }
+  },
+  "SCLambda1EventsRuleRole8D5C2EBD": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC Lambda.1/EventsRuleRole/Resource"
+   }
+  },
+  "SCLambda1EventsRuleRoleDefaultPolicy2C2A3135": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SCLambda1EventsRuleRoleDefaultPolicy2C2A3135",
+    "Roles": [
+     {
+      "Ref": "SCLambda1EventsRuleRole8D5C2EBD"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC Lambda.1/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "SCLambda1AutoEventRule0DD4750A": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate SC 2.0.0 Lambda.1 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        "security-control/Lambda.1"
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "SC_2.0.0_Lambda.1_AutoTrigger",
+    "State": {
+     "Ref": "SC200Lambda1AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "SCLambda1EventsRuleRole8D5C2EBD",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC Lambda.1/AutoEventRule/Resource"
+   }
+  },
+  "SCRDS1EventsRuleRole23D2662B": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC RDS.1/EventsRuleRole/Resource"
+   }
+  },
+  "SCRDS1EventsRuleRoleDefaultPolicyC4A6665A": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SCRDS1EventsRuleRoleDefaultPolicyC4A6665A",
+    "Roles": [
+     {
+      "Ref": "SCRDS1EventsRuleRole23D2662B"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC RDS.1/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "SCRDS1AutoEventRuleBDB218A7": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate SC 2.0.0 RDS.1 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        "security-control/RDS.1"
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "SC_2.0.0_RDS.1_AutoTrigger",
+    "State": {
+     "Ref": "SC200RDS1AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "SCRDS1EventsRuleRole23D2662B",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC RDS.1/AutoEventRule/Resource"
+   }
+  },
+  "SCRDS2EventsRuleRole562F05E5": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC RDS.2/EventsRuleRole/Resource"
+   }
+  },
+  "SCRDS2EventsRuleRoleDefaultPolicyEC384E98": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SCRDS2EventsRuleRoleDefaultPolicyEC384E98",
+    "Roles": [
+     {
+      "Ref": "SCRDS2EventsRuleRole562F05E5"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC RDS.2/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "SCRDS2AutoEventRule8A24090E": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate SC 2.0.0 RDS.2 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        "security-control/RDS.2"
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "SC_2.0.0_RDS.2_AutoTrigger",
+    "State": {
+     "Ref": "SC200RDS2AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "SCRDS2EventsRuleRole562F05E5",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC RDS.2/AutoEventRule/Resource"
+   }
+  },
+  "SCRDS4EventsRuleRole2E960A39": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC RDS.4/EventsRuleRole/Resource"
+   }
+  },
+  "SCRDS4EventsRuleRoleDefaultPolicy8594063B": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SCRDS4EventsRuleRoleDefaultPolicy8594063B",
+    "Roles": [
+     {
+      "Ref": "SCRDS4EventsRuleRole2E960A39"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC RDS.4/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "SCRDS4AutoEventRule3E471C1B": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate SC 2.0.0 RDS.4 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        "security-control/RDS.4"
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "SC_2.0.0_RDS.4_AutoTrigger",
+    "State": {
+     "Ref": "SC200RDS4AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "SCRDS4EventsRuleRole2E960A39",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC RDS.4/AutoEventRule/Resource"
+   }
+  },
+  "SCRDS5EventsRuleRole7D8C6CCD": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC RDS.5/EventsRuleRole/Resource"
+   }
+  },
+  "SCRDS5EventsRuleRoleDefaultPolicy417D0E6C": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SCRDS5EventsRuleRoleDefaultPolicy417D0E6C",
+    "Roles": [
+     {
+      "Ref": "SCRDS5EventsRuleRole7D8C6CCD"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC RDS.5/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "SCRDS5AutoEventRule8F590527": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate SC 2.0.0 RDS.5 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        "security-control/RDS.5"
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "SC_2.0.0_RDS.5_AutoTrigger",
+    "State": {
+     "Ref": "SC200RDS5AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "SCRDS5EventsRuleRole7D8C6CCD",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC RDS.5/AutoEventRule/Resource"
+   }
+  },
+  "SCRDS6EventsRuleRole1696A8F1": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC RDS.6/EventsRuleRole/Resource"
+   }
+  },
+  "SCRDS6EventsRuleRoleDefaultPolicyBAEB8AFA": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SCRDS6EventsRuleRoleDefaultPolicyBAEB8AFA",
+    "Roles": [
+     {
+      "Ref": "SCRDS6EventsRuleRole1696A8F1"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC RDS.6/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "SCRDS6AutoEventRule1300B51A": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate SC 2.0.0 RDS.6 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        "security-control/RDS.6"
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "SC_2.0.0_RDS.6_AutoTrigger",
+    "State": {
+     "Ref": "SC200RDS6AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "SCRDS6EventsRuleRole1696A8F1",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC RDS.6/AutoEventRule/Resource"
+   }
+  },
+  "SCRDS7EventsRuleRoleDBFEB1F0": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC RDS.7/EventsRuleRole/Resource"
+   }
+  },
+  "SCRDS7EventsRuleRoleDefaultPolicy10F4B913": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SCRDS7EventsRuleRoleDefaultPolicy10F4B913",
+    "Roles": [
+     {
+      "Ref": "SCRDS7EventsRuleRoleDBFEB1F0"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC RDS.7/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "SCRDS7AutoEventRuleF3FE8378": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate SC 2.0.0 RDS.7 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        "security-control/RDS.7"
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "SC_2.0.0_RDS.7_AutoTrigger",
+    "State": {
+     "Ref": "SC200RDS7AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "SCRDS7EventsRuleRoleDBFEB1F0",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC RDS.7/AutoEventRule/Resource"
+   }
+  },
+  "SCRDS8EventsRuleRole74E29FE5": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC RDS.8/EventsRuleRole/Resource"
+   }
+  },
+  "SCRDS8EventsRuleRoleDefaultPolicy743D72F1": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SCRDS8EventsRuleRoleDefaultPolicy743D72F1",
+    "Roles": [
+     {
+      "Ref": "SCRDS8EventsRuleRole74E29FE5"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC RDS.8/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "SCRDS8AutoEventRuleC20B0AA7": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate SC 2.0.0 RDS.8 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        "security-control/RDS.8"
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "SC_2.0.0_RDS.8_AutoTrigger",
+    "State": {
+     "Ref": "SC200RDS8AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "SCRDS8EventsRuleRole74E29FE5",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC RDS.8/AutoEventRule/Resource"
+   }
+  },
+  "SCRDS13EventsRuleRole7649D524": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC RDS.13/EventsRuleRole/Resource"
+   }
+  },
+  "SCRDS13EventsRuleRoleDefaultPolicy4B1A80C7": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SCRDS13EventsRuleRoleDefaultPolicy4B1A80C7",
+    "Roles": [
+     {
+      "Ref": "SCRDS13EventsRuleRole7649D524"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC RDS.13/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "SCRDS13AutoEventRule887A48E3": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate SC 2.0.0 RDS.13 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        "security-control/RDS.13"
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "SC_2.0.0_RDS.13_AutoTrigger",
+    "State": {
+     "Ref": "SC200RDS13AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "SCRDS13EventsRuleRole7649D524",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC RDS.13/AutoEventRule/Resource"
+   }
+  },
+  "SCRDS16EventsRuleRole742284BB": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC RDS.16/EventsRuleRole/Resource"
+   }
+  },
+  "SCRDS16EventsRuleRoleDefaultPolicy34CBD702": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SCRDS16EventsRuleRoleDefaultPolicy34CBD702",
+    "Roles": [
+     {
+      "Ref": "SCRDS16EventsRuleRole742284BB"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC RDS.16/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "SCRDS16AutoEventRuleA108937F": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate SC 2.0.0 RDS.16 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        "security-control/RDS.16"
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "SC_2.0.0_RDS.16_AutoTrigger",
+    "State": {
+     "Ref": "SC200RDS16AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "SCRDS16EventsRuleRole742284BB",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC RDS.16/AutoEventRule/Resource"
+   }
+  },
+  "SCRedshift1EventsRuleRole51038D14": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC Redshift.1/EventsRuleRole/Resource"
+   }
+  },
+  "SCRedshift1EventsRuleRoleDefaultPolicyE8EC986F": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SCRedshift1EventsRuleRoleDefaultPolicyE8EC986F",
+    "Roles": [
+     {
+      "Ref": "SCRedshift1EventsRuleRole51038D14"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC Redshift.1/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "SCRedshift1AutoEventRule25869183": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate SC 2.0.0 Redshift.1 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        "security-control/Redshift.1"
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "SC_2.0.0_Redshift.1_AutoTrigger",
+    "State": {
+     "Ref": "SC200Redshift1AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "SCRedshift1EventsRuleRole51038D14",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC Redshift.1/AutoEventRule/Resource"
+   }
+  },
+  "SCRedshift3EventsRuleRole2E3DF626": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC Redshift.3/EventsRuleRole/Resource"
+   }
+  },
+  "SCRedshift3EventsRuleRoleDefaultPolicyE40DDF68": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SCRedshift3EventsRuleRoleDefaultPolicyE40DDF68",
+    "Roles": [
+     {
+      "Ref": "SCRedshift3EventsRuleRole2E3DF626"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC Redshift.3/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "SCRedshift3AutoEventRule68630A83": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate SC 2.0.0 Redshift.3 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        "security-control/Redshift.3"
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "SC_2.0.0_Redshift.3_AutoTrigger",
+    "State": {
+     "Ref": "SC200Redshift3AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "SCRedshift3EventsRuleRole2E3DF626",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC Redshift.3/AutoEventRule/Resource"
+   }
+  },
+  "SCRedshift4EventsRuleRole063A2FBA": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC Redshift.4/EventsRuleRole/Resource"
+   }
+  },
+  "SCRedshift4EventsRuleRoleDefaultPolicy816F4788": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SCRedshift4EventsRuleRoleDefaultPolicy816F4788",
+    "Roles": [
+     {
+      "Ref": "SCRedshift4EventsRuleRole063A2FBA"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC Redshift.4/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "SCRedshift4AutoEventRuleD8647BB5": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate SC 2.0.0 Redshift.4 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        "security-control/Redshift.4"
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "SC_2.0.0_Redshift.4_AutoTrigger",
+    "State": {
+     "Ref": "SC200Redshift4AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "SCRedshift4EventsRuleRole063A2FBA",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC Redshift.4/AutoEventRule/Resource"
+   }
+  },
+  "SCRedshift6EventsRuleRoleC2861314": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC Redshift.6/EventsRuleRole/Resource"
+   }
+  },
+  "SCRedshift6EventsRuleRoleDefaultPolicy9203F402": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SCRedshift6EventsRuleRoleDefaultPolicy9203F402",
+    "Roles": [
+     {
+      "Ref": "SCRedshift6EventsRuleRoleC2861314"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC Redshift.6/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "SCRedshift6AutoEventRuleD12A75D3": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate SC 2.0.0 Redshift.6 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        "security-control/Redshift.6"
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "SC_2.0.0_Redshift.6_AutoTrigger",
+    "State": {
+     "Ref": "SC200Redshift6AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "SCRedshift6EventsRuleRoleC2861314",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC Redshift.6/AutoEventRule/Resource"
+   }
+  },
+  "SCS31EventsRuleRole76CD7A5D": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC S3.1/EventsRuleRole/Resource"
+   }
+  },
+  "SCS31EventsRuleRoleDefaultPolicyEAF91204": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SCS31EventsRuleRoleDefaultPolicyEAF91204",
+    "Roles": [
+     {
+      "Ref": "SCS31EventsRuleRole76CD7A5D"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC S3.1/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "SCS31AutoEventRule20A7D277": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate SC 2.0.0 S3.1 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        "security-control/S3.1"
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "SC_2.0.0_S3.1_AutoTrigger",
+    "State": {
+     "Ref": "SC200S31AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "SCS31EventsRuleRole76CD7A5D",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC S3.1/AutoEventRule/Resource"
+   }
+  },
+  "SCS32EventsRuleRole435A87D5": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC S3.2/EventsRuleRole/Resource"
+   }
+  },
+  "SCS32EventsRuleRoleDefaultPolicyC439E7EC": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SCS32EventsRuleRoleDefaultPolicyC439E7EC",
+    "Roles": [
+     {
+      "Ref": "SCS32EventsRuleRole435A87D5"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC S3.2/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "SCS32AutoEventRuleF5FE0723": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate SC 2.0.0 S3.2 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        "security-control/S3.2"
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "SC_2.0.0_S3.2_AutoTrigger",
+    "State": {
+     "Ref": "SC200S32AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "SCS32EventsRuleRole435A87D5",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC S3.2/AutoEventRule/Resource"
+   }
+  },
+  "RemapSCS33BAF4F2BD": {
+   "Type": "AWS::SSM::Parameter",
+   "Properties": {
+    "Type": "String",
+    "Value": "S3.2",
+    "Description": "Remap the SC S3.3 finding to SC S3.2 remediation",
+    "Name": "/Solutions/SO0111/SC/2.0.0/S3.3/remap"
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/Remap SC S3.3/Resource"
+   }
+  },
+  "SCS33EventsRuleRole361E2FC0": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC S3.3/EventsRuleRole/Resource"
+   }
+  },
+  "SCS33EventsRuleRoleDefaultPolicyA272B848": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SCS33EventsRuleRoleDefaultPolicyA272B848",
+    "Roles": [
+     {
+      "Ref": "SCS33EventsRuleRole361E2FC0"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC S3.3/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "SCS33AutoEventRule9FEAFF05": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate SC 2.0.0 S3.3 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        "security-control/S3.3"
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "SC_2.0.0_S3.3_AutoTrigger",
+    "State": {
+     "Ref": "SC200S33AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "SCS33EventsRuleRole361E2FC0",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC S3.3/AutoEventRule/Resource"
+   }
+  },
+  "SCS34EventsRuleRole5C9E7751": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC S3.4/EventsRuleRole/Resource"
+   }
+  },
+  "SCS34EventsRuleRoleDefaultPolicy1592459F": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SCS34EventsRuleRoleDefaultPolicy1592459F",
+    "Roles": [
+     {
+      "Ref": "SCS34EventsRuleRole5C9E7751"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC S3.4/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "SCS34AutoEventRuleECD4680B": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate SC 2.0.0 S3.4 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        "security-control/S3.4"
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "SC_2.0.0_S3.4_AutoTrigger",
+    "State": {
+     "Ref": "SC200S34AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "SCS34EventsRuleRole5C9E7751",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC S3.4/AutoEventRule/Resource"
+   }
+  },
+  "SCS35EventsRuleRole66BBE964": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC S3.5/EventsRuleRole/Resource"
+   }
+  },
+  "SCS35EventsRuleRoleDefaultPolicy11B5ED06": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SCS35EventsRuleRoleDefaultPolicy11B5ED06",
+    "Roles": [
+     {
+      "Ref": "SCS35EventsRuleRole66BBE964"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC S3.5/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "SCS35AutoEventRuleC00AA58B": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate SC 2.0.0 S3.5 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        "security-control/S3.5"
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "SC_2.0.0_S3.5_AutoTrigger",
+    "State": {
+     "Ref": "SC200S35AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "SCS35EventsRuleRole66BBE964",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC S3.5/AutoEventRule/Resource"
+   }
+  },
+  "SCS36EventsRuleRole77E7B0C2": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC S3.6/EventsRuleRole/Resource"
+   }
+  },
+  "SCS36EventsRuleRoleDefaultPolicyD6863E62": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SCS36EventsRuleRoleDefaultPolicyD6863E62",
+    "Roles": [
+     {
+      "Ref": "SCS36EventsRuleRole77E7B0C2"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC S3.6/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "SCS36AutoEventRuleB881B200": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate SC 2.0.0 S3.6 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        "security-control/S3.6"
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "SC_2.0.0_S3.6_AutoTrigger",
+    "State": {
+     "Ref": "SC200S36AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "SCS36EventsRuleRole77E7B0C2",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC S3.6/AutoEventRule/Resource"
+   }
+  },
+  "RemapSCS38920231C4": {
+   "Type": "AWS::SSM::Parameter",
+   "Properties": {
+    "Type": "String",
+    "Value": "S3.2",
+    "Description": "Remap the SC S3.8 finding to SC S3.2 remediation",
+    "Name": "/Solutions/SO0111/SC/2.0.0/S3.8/remap"
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/Remap SC S3.8/Resource"
+   }
+  },
+  "SCS38EventsRuleRole0206A7C8": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC S3.8/EventsRuleRole/Resource"
+   }
+  },
+  "SCS38EventsRuleRoleDefaultPolicy257C374F": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SCS38EventsRuleRoleDefaultPolicy257C374F",
+    "Roles": [
+     {
+      "Ref": "SCS38EventsRuleRole0206A7C8"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC S3.8/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "SCS38AutoEventRule30C2AF0F": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate SC 2.0.0 S3.8 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        "security-control/S3.8"
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "SC_2.0.0_S3.8_AutoTrigger",
+    "State": {
+     "Ref": "SC200S38AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "SCS38EventsRuleRole0206A7C8",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "SCStack/SC S3.8/AutoEventRule/Resource"
+   }
+  }
+ }
+}

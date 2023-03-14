@@ -1,7 +1,7 @@
 # build
-/deployment/global-s3-assets/
+# /deployment/global-s3-assets/
 /deployment/open-source/
-/deployment/regional-s3-assets/
+# /deployment/regional-s3-assets/
 /deployment/setenv.sh
 /deployment/temp/
 

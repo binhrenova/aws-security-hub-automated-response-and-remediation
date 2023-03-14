@@ -1,0 +1,4360 @@
+{
+ "Description": "(DEV-SO0111P) AWS Security Hub Automated Response & Remediation CIS 1.4.0 Compliance Pack - Admin Account, v1.5.1",
+ "AWSTemplateFormatVersion": "2010-09-09",
+ "Parameters": {
+  "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/Solutions/SO0111/OrchestratorArn"
+  },
+  "CIS14018AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for CIS 1.4.0 1.8"
+  },
+  "CIS14019AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for CIS 1.4.0 1.9"
+  },
+  "CIS140112AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for CIS 1.4.0 1.12"
+  },
+  "CIS140114AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for CIS 1.4.0 1.14"
+  },
+  "CIS140117AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for CIS 1.4.0 1.17"
+  },
+  "CIS140211AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for CIS 1.4.0 2.1.1"
+  },
+  "CIS140212AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for CIS 1.4.0 2.1.2"
+  },
+  "CIS1402151AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for CIS 1.4.0 2.1.5.1"
+  },
+  "CIS1402152AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for CIS 1.4.0 2.1.5.2"
+  },
+  "CIS140221AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for CIS 1.4.0 2.2.1"
+  },
+  "CIS14031AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for CIS 1.4.0 3.1"
+  },
+  "CIS14032AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for CIS 1.4.0 3.2"
+  },
+  "CIS14033AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for CIS 1.4.0 3.3"
+  },
+  "CIS14034AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for CIS 1.4.0 3.4"
+  },
+  "CIS14035AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for CIS 1.4.0 3.5"
+  },
+  "CIS14036AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for CIS 1.4.0 3.6"
+  },
+  "CIS14037AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for CIS 1.4.0 3.7"
+  },
+  "CIS14038AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for CIS 1.4.0 3.8"
+  },
+  "CIS14039AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for CIS 1.4.0 3.9"
+  },
+  "CIS14041AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for CIS 1.4.0 4.1"
+  },
+  "CIS14042AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for CIS 1.4.0 4.2"
+  },
+  "CIS14043AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for CIS 1.4.0 4.3"
+  },
+  "CIS14044AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for CIS 1.4.0 4.4"
+  },
+  "CIS14045AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for CIS 1.4.0 4.5"
+  },
+  "CIS14046AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for CIS 1.4.0 4.6"
+  },
+  "CIS14047AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for CIS 1.4.0 4.7"
+  },
+  "CIS14048AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for CIS 1.4.0 4.8"
+  },
+  "CIS14049AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for CIS 1.4.0 4.9"
+  },
+  "CIS140410AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for CIS 1.4.0 4.10"
+  },
+  "CIS140411AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for CIS 1.4.0 4.11"
+  },
+  "CIS140412AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for CIS 1.4.0 4.12"
+  },
+  "CIS140413AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for CIS 1.4.0 4.13"
+  },
+  "CIS140414AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for CIS 1.4.0 4.14"
+  },
+  "CIS14053AutoTrigger": {
+   "Type": "String",
+   "Default": "DISABLED",
+   "AllowedValues": [
+    "ENABLED",
+    "DISABLED"
+   ],
+   "Description": "This will fully enable automated remediation for CIS 1.4.0 5.3"
+  }
+ },
+ "Resources": {
+  "CISShortNameB8C8810A": {
+   "Type": "AWS::SSM::Parameter",
+   "Properties": {
+    "Type": "String",
+    "Value": "CIS",
+    "Description": "Provides a short (1-12) character abbreviation for the standard.",
+    "Name": "/Solutions/SO0111/cis-aws-foundations-benchmark/1.4.0/shortname"
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CISShortName/Resource"
+   }
+  },
+  "StandardVersionCB2C6951": {
+   "Type": "AWS::SSM::Parameter",
+   "Properties": {
+    "Type": "String",
+    "Value": "enabled",
+    "Description": "This parameter controls whether the SHARR step function will process findings for this version of the standard.",
+    "Name": "/Solutions/SO0111/cis-aws-foundations-benchmark/1.4.0/status"
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/StandardVersion/Resource"
+   }
+  },
+  "CIS18EventsRuleRoleC1B4B61A": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 1.8/EventsRuleRole/Resource"
+   }
+  },
+  "CIS18EventsRuleRoleDefaultPolicy40AE3E6D": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "CIS18EventsRuleRoleDefaultPolicy40AE3E6D",
+    "Roles": [
+     {
+      "Ref": "CIS18EventsRuleRoleC1B4B61A"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 1.8/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "CIS18AutoEventRule30B4F305": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate CIS 1.4.0 1.8 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.4.0/rule/1.8"
+          ]
+         ]
+        }
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "CIS_1.4.0_1.8_AutoTrigger",
+    "State": {
+     "Ref": "CIS14018AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "CIS18EventsRuleRoleC1B4B61A",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 1.8/AutoEventRule/Resource"
+   }
+  },
+  "RemapCIS19C15D1B3E": {
+   "Type": "AWS::SSM::Parameter",
+   "Properties": {
+    "Type": "String",
+    "Value": "1.8",
+    "Description": "Remap the CIS 1.9 finding to CIS 1.8 remediation",
+    "Name": "/Solutions/SO0111/CIS/1.4.0/1.9/remap"
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/Remap CIS 1.9/Resource"
+   }
+  },
+  "CIS19EventsRuleRole00BFFD04": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 1.9/EventsRuleRole/Resource"
+   }
+  },
+  "CIS19EventsRuleRoleDefaultPolicy54A7F018": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "CIS19EventsRuleRoleDefaultPolicy54A7F018",
+    "Roles": [
+     {
+      "Ref": "CIS19EventsRuleRole00BFFD04"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 1.9/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "CIS19AutoEventRule04CFD704": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate CIS 1.4.0 1.9 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.4.0/rule/1.9"
+          ]
+         ]
+        }
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "CIS_1.4.0_1.9_AutoTrigger",
+    "State": {
+     "Ref": "CIS14019AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "CIS19EventsRuleRole00BFFD04",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 1.9/AutoEventRule/Resource"
+   }
+  },
+  "CIS112EventsRuleRoleE7083618": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 1.12/EventsRuleRole/Resource"
+   }
+  },
+  "CIS112EventsRuleRoleDefaultPolicy1B799F08": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "CIS112EventsRuleRoleDefaultPolicy1B799F08",
+    "Roles": [
+     {
+      "Ref": "CIS112EventsRuleRoleE7083618"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 1.12/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "CIS112AutoEventRuleDE46A94D": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate CIS 1.4.0 1.12 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.4.0/rule/1.12"
+          ]
+         ]
+        }
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "CIS_1.4.0_1.12_AutoTrigger",
+    "State": {
+     "Ref": "CIS140112AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "CIS112EventsRuleRoleE7083618",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 1.12/AutoEventRule/Resource"
+   }
+  },
+  "CIS114EventsRuleRole9EA875BE": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 1.14/EventsRuleRole/Resource"
+   }
+  },
+  "CIS114EventsRuleRoleDefaultPolicy16217851": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "CIS114EventsRuleRoleDefaultPolicy16217851",
+    "Roles": [
+     {
+      "Ref": "CIS114EventsRuleRole9EA875BE"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 1.14/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "CIS114AutoEventRule1BD49C2F": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate CIS 1.4.0 1.14 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.4.0/rule/1.14"
+          ]
+         ]
+        }
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "CIS_1.4.0_1.14_AutoTrigger",
+    "State": {
+     "Ref": "CIS140114AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "CIS114EventsRuleRole9EA875BE",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 1.14/AutoEventRule/Resource"
+   }
+  },
+  "CIS117EventsRuleRole286FF318": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 1.17/EventsRuleRole/Resource"
+   }
+  },
+  "CIS117EventsRuleRoleDefaultPolicy76A3D8C5": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "CIS117EventsRuleRoleDefaultPolicy76A3D8C5",
+    "Roles": [
+     {
+      "Ref": "CIS117EventsRuleRole286FF318"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 1.17/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "CIS117AutoEventRuleB2430A56": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate CIS 1.4.0 1.17 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.4.0/rule/1.17"
+          ]
+         ]
+        }
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "CIS_1.4.0_1.17_AutoTrigger",
+    "State": {
+     "Ref": "CIS140117AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "CIS117EventsRuleRole286FF318",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 1.17/AutoEventRule/Resource"
+   }
+  },
+  "CIS211EventsRuleRoleF4B7BF51": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 2.1.1/EventsRuleRole/Resource"
+   }
+  },
+  "CIS211EventsRuleRoleDefaultPolicy2C0D2642": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "CIS211EventsRuleRoleDefaultPolicy2C0D2642",
+    "Roles": [
+     {
+      "Ref": "CIS211EventsRuleRoleF4B7BF51"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 2.1.1/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "CIS211AutoEventRuleAA6C5519": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate CIS 1.4.0 2.1.1 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.4.0/rule/2.1.1"
+          ]
+         ]
+        }
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "CIS_1.4.0_2.1.1_AutoTrigger",
+    "State": {
+     "Ref": "CIS140211AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "CIS211EventsRuleRoleF4B7BF51",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 2.1.1/AutoEventRule/Resource"
+   }
+  },
+  "CIS212EventsRuleRole8444A290": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 2.1.2/EventsRuleRole/Resource"
+   }
+  },
+  "CIS212EventsRuleRoleDefaultPolicyE592B39D": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "CIS212EventsRuleRoleDefaultPolicyE592B39D",
+    "Roles": [
+     {
+      "Ref": "CIS212EventsRuleRole8444A290"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 2.1.2/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "CIS212AutoEventRuleB44FCFA2": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate CIS 1.4.0 2.1.2 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.4.0/rule/2.1.2"
+          ]
+         ]
+        }
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "CIS_1.4.0_2.1.2_AutoTrigger",
+    "State": {
+     "Ref": "CIS140212AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "CIS212EventsRuleRole8444A290",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 2.1.2/AutoEventRule/Resource"
+   }
+  },
+  "CIS2151EventsRuleRoleEB2CAA3A": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 2.1.5.1/EventsRuleRole/Resource"
+   }
+  },
+  "CIS2151EventsRuleRoleDefaultPolicyF6957908": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "CIS2151EventsRuleRoleDefaultPolicyF6957908",
+    "Roles": [
+     {
+      "Ref": "CIS2151EventsRuleRoleEB2CAA3A"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 2.1.5.1/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "CIS2151AutoEventRule9BDED03C": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate CIS 1.4.0 2.1.5.1 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.4.0/rule/2.1.5.1"
+          ]
+         ]
+        }
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "CIS_1.4.0_2.1.5.1_AutoTrigger",
+    "State": {
+     "Ref": "CIS1402151AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "CIS2151EventsRuleRoleEB2CAA3A",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 2.1.5.1/AutoEventRule/Resource"
+   }
+  },
+  "CIS2152EventsRuleRole864D3D8F": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 2.1.5.2/EventsRuleRole/Resource"
+   }
+  },
+  "CIS2152EventsRuleRoleDefaultPolicy4E460695": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "CIS2152EventsRuleRoleDefaultPolicy4E460695",
+    "Roles": [
+     {
+      "Ref": "CIS2152EventsRuleRole864D3D8F"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 2.1.5.2/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "CIS2152AutoEventRule13CCC589": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate CIS 1.4.0 2.1.5.2 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.4.0/rule/2.1.5.2"
+          ]
+         ]
+        }
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "CIS_1.4.0_2.1.5.2_AutoTrigger",
+    "State": {
+     "Ref": "CIS1402152AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "CIS2152EventsRuleRole864D3D8F",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 2.1.5.2/AutoEventRule/Resource"
+   }
+  },
+  "CIS221EventsRuleRoleA89B6127": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 2.2.1/EventsRuleRole/Resource"
+   }
+  },
+  "CIS221EventsRuleRoleDefaultPolicy1D536468": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "CIS221EventsRuleRoleDefaultPolicy1D536468",
+    "Roles": [
+     {
+      "Ref": "CIS221EventsRuleRoleA89B6127"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 2.2.1/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "CIS221AutoEventRule6D852561": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate CIS 1.4.0 2.2.1 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.4.0/rule/2.2.1"
+          ]
+         ]
+        }
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "CIS_1.4.0_2.2.1_AutoTrigger",
+    "State": {
+     "Ref": "CIS140221AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "CIS221EventsRuleRoleA89B6127",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 2.2.1/AutoEventRule/Resource"
+   }
+  },
+  "CIS31EventsRuleRoleCF0244DD": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 3.1/EventsRuleRole/Resource"
+   }
+  },
+  "CIS31EventsRuleRoleDefaultPolicy50CEA8AF": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "CIS31EventsRuleRoleDefaultPolicy50CEA8AF",
+    "Roles": [
+     {
+      "Ref": "CIS31EventsRuleRoleCF0244DD"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 3.1/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "CIS31AutoEventRule58D4C7F8": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate CIS 1.4.0 3.1 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.4.0/rule/3.1"
+          ]
+         ]
+        }
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "CIS_1.4.0_3.1_AutoTrigger",
+    "State": {
+     "Ref": "CIS14031AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "CIS31EventsRuleRoleCF0244DD",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 3.1/AutoEventRule/Resource"
+   }
+  },
+  "CIS32EventsRuleRoleA34E99B0": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 3.2/EventsRuleRole/Resource"
+   }
+  },
+  "CIS32EventsRuleRoleDefaultPolicyE7B1D467": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "CIS32EventsRuleRoleDefaultPolicyE7B1D467",
+    "Roles": [
+     {
+      "Ref": "CIS32EventsRuleRoleA34E99B0"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 3.2/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "CIS32AutoEventRuleCD84153D": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate CIS 1.4.0 3.2 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.4.0/rule/3.2"
+          ]
+         ]
+        }
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "CIS_1.4.0_3.2_AutoTrigger",
+    "State": {
+     "Ref": "CIS14032AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "CIS32EventsRuleRoleA34E99B0",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 3.2/AutoEventRule/Resource"
+   }
+  },
+  "CIS33EventsRuleRole69177C30": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 3.3/EventsRuleRole/Resource"
+   }
+  },
+  "CIS33EventsRuleRoleDefaultPolicyCDFF2C29": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "CIS33EventsRuleRoleDefaultPolicyCDFF2C29",
+    "Roles": [
+     {
+      "Ref": "CIS33EventsRuleRole69177C30"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 3.3/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "CIS33AutoEventRule1BC12B90": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate CIS 1.4.0 3.3 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.4.0/rule/3.3"
+          ]
+         ]
+        }
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "CIS_1.4.0_3.3_AutoTrigger",
+    "State": {
+     "Ref": "CIS14033AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "CIS33EventsRuleRole69177C30",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 3.3/AutoEventRule/Resource"
+   }
+  },
+  "CIS34EventsRuleRoleF0E632D1": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 3.4/EventsRuleRole/Resource"
+   }
+  },
+  "CIS34EventsRuleRoleDefaultPolicy080A038E": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "CIS34EventsRuleRoleDefaultPolicy080A038E",
+    "Roles": [
+     {
+      "Ref": "CIS34EventsRuleRoleF0E632D1"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 3.4/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "CIS34AutoEventRule9E409B7E": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate CIS 1.4.0 3.4 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.4.0/rule/3.4"
+          ]
+         ]
+        }
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "CIS_1.4.0_3.4_AutoTrigger",
+    "State": {
+     "Ref": "CIS14034AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "CIS34EventsRuleRoleF0E632D1",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 3.4/AutoEventRule/Resource"
+   }
+  },
+  "CIS35EventsRuleRole3B9D9FEB": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 3.5/EventsRuleRole/Resource"
+   }
+  },
+  "CIS35EventsRuleRoleDefaultPolicy48A0C7EB": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "CIS35EventsRuleRoleDefaultPolicy48A0C7EB",
+    "Roles": [
+     {
+      "Ref": "CIS35EventsRuleRole3B9D9FEB"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 3.5/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "CIS35AutoEventRuleD227A98B": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate CIS 1.4.0 3.5 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.4.0/rule/3.5"
+          ]
+         ]
+        }
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "CIS_1.4.0_3.5_AutoTrigger",
+    "State": {
+     "Ref": "CIS14035AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "CIS35EventsRuleRole3B9D9FEB",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 3.5/AutoEventRule/Resource"
+   }
+  },
+  "CIS36EventsRuleRole98147F98": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 3.6/EventsRuleRole/Resource"
+   }
+  },
+  "CIS36EventsRuleRoleDefaultPolicy6BA98C77": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "CIS36EventsRuleRoleDefaultPolicy6BA98C77",
+    "Roles": [
+     {
+      "Ref": "CIS36EventsRuleRole98147F98"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 3.6/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "CIS36AutoEventRuleC8094364": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate CIS 1.4.0 3.6 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.4.0/rule/3.6"
+          ]
+         ]
+        }
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "CIS_1.4.0_3.6_AutoTrigger",
+    "State": {
+     "Ref": "CIS14036AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "CIS36EventsRuleRole98147F98",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 3.6/AutoEventRule/Resource"
+   }
+  },
+  "CIS37EventsRuleRoleB04D7E83": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 3.7/EventsRuleRole/Resource"
+   }
+  },
+  "CIS37EventsRuleRoleDefaultPolicy6044DF10": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "CIS37EventsRuleRoleDefaultPolicy6044DF10",
+    "Roles": [
+     {
+      "Ref": "CIS37EventsRuleRoleB04D7E83"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 3.7/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "CIS37AutoEventRuleBCE7D5F9": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate CIS 1.4.0 3.7 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.4.0/rule/3.7"
+          ]
+         ]
+        }
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "CIS_1.4.0_3.7_AutoTrigger",
+    "State": {
+     "Ref": "CIS14037AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "CIS37EventsRuleRoleB04D7E83",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 3.7/AutoEventRule/Resource"
+   }
+  },
+  "CIS38EventsRuleRole55E0C0B4": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 3.8/EventsRuleRole/Resource"
+   }
+  },
+  "CIS38EventsRuleRoleDefaultPolicy8F2ACC57": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "CIS38EventsRuleRoleDefaultPolicy8F2ACC57",
+    "Roles": [
+     {
+      "Ref": "CIS38EventsRuleRole55E0C0B4"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 3.8/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "CIS38AutoEventRule6C03CD35": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate CIS 1.4.0 3.8 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.4.0/rule/3.8"
+          ]
+         ]
+        }
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "CIS_1.4.0_3.8_AutoTrigger",
+    "State": {
+     "Ref": "CIS14038AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "CIS38EventsRuleRole55E0C0B4",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 3.8/AutoEventRule/Resource"
+   }
+  },
+  "CIS39EventsRuleRole42AAEB4D": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 3.9/EventsRuleRole/Resource"
+   }
+  },
+  "CIS39EventsRuleRoleDefaultPolicyF77FEA10": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "CIS39EventsRuleRoleDefaultPolicyF77FEA10",
+    "Roles": [
+     {
+      "Ref": "CIS39EventsRuleRole42AAEB4D"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 3.9/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "CIS39AutoEventRule15B18ADC": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate CIS 1.4.0 3.9 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.4.0/rule/3.9"
+          ]
+         ]
+        }
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "CIS_1.4.0_3.9_AutoTrigger",
+    "State": {
+     "Ref": "CIS14039AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "CIS39EventsRuleRole42AAEB4D",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 3.9/AutoEventRule/Resource"
+   }
+  },
+  "CIS41EventsRuleRoleAFBA33A3": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 4.1/EventsRuleRole/Resource"
+   }
+  },
+  "CIS41EventsRuleRoleDefaultPolicy9D41E873": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "CIS41EventsRuleRoleDefaultPolicy9D41E873",
+    "Roles": [
+     {
+      "Ref": "CIS41EventsRuleRoleAFBA33A3"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 4.1/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "CIS41AutoEventRuleABBCCC9F": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate CIS 1.4.0 4.1 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.4.0/rule/4.1"
+          ]
+         ]
+        }
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "CIS_1.4.0_4.1_AutoTrigger",
+    "State": {
+     "Ref": "CIS14041AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "CIS41EventsRuleRoleAFBA33A3",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 4.1/AutoEventRule/Resource"
+   }
+  },
+  "RemapCIS4245EB49A0": {
+   "Type": "AWS::SSM::Parameter",
+   "Properties": {
+    "Type": "String",
+    "Value": "4.1",
+    "Description": "Remap the CIS 4.2 finding to CIS 4.1 remediation",
+    "Name": "/Solutions/SO0111/CIS/1.4.0/4.2/remap"
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/Remap CIS 4.2/Resource"
+   }
+  },
+  "CIS42EventsRuleRole05299445": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 4.2/EventsRuleRole/Resource"
+   }
+  },
+  "CIS42EventsRuleRoleDefaultPolicy5307DB32": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "CIS42EventsRuleRoleDefaultPolicy5307DB32",
+    "Roles": [
+     {
+      "Ref": "CIS42EventsRuleRole05299445"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 4.2/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "CIS42AutoEventRule8BF03E8E": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate CIS 1.4.0 4.2 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.4.0/rule/4.2"
+          ]
+         ]
+        }
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "CIS_1.4.0_4.2_AutoTrigger",
+    "State": {
+     "Ref": "CIS14042AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "CIS42EventsRuleRole05299445",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 4.2/AutoEventRule/Resource"
+   }
+  },
+  "RemapCIS430561261B": {
+   "Type": "AWS::SSM::Parameter",
+   "Properties": {
+    "Type": "String",
+    "Value": "4.1",
+    "Description": "Remap the CIS 4.3 finding to CIS 4.1 remediation",
+    "Name": "/Solutions/SO0111/CIS/1.4.0/4.3/remap"
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/Remap CIS 4.3/Resource"
+   }
+  },
+  "CIS43EventsRuleRole333B29A1": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 4.3/EventsRuleRole/Resource"
+   }
+  },
+  "CIS43EventsRuleRoleDefaultPolicyB1F8BA10": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "CIS43EventsRuleRoleDefaultPolicyB1F8BA10",
+    "Roles": [
+     {
+      "Ref": "CIS43EventsRuleRole333B29A1"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 4.3/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "CIS43AutoEventRuleAF86A230": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate CIS 1.4.0 4.3 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.4.0/rule/4.3"
+          ]
+         ]
+        }
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "CIS_1.4.0_4.3_AutoTrigger",
+    "State": {
+     "Ref": "CIS14043AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "CIS43EventsRuleRole333B29A1",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 4.3/AutoEventRule/Resource"
+   }
+  },
+  "RemapCIS44E58BBFB6": {
+   "Type": "AWS::SSM::Parameter",
+   "Properties": {
+    "Type": "String",
+    "Value": "4.1",
+    "Description": "Remap the CIS 4.4 finding to CIS 4.1 remediation",
+    "Name": "/Solutions/SO0111/CIS/1.4.0/4.4/remap"
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/Remap CIS 4.4/Resource"
+   }
+  },
+  "CIS44EventsRuleRole20880591": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 4.4/EventsRuleRole/Resource"
+   }
+  },
+  "CIS44EventsRuleRoleDefaultPolicy28B81486": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "CIS44EventsRuleRoleDefaultPolicy28B81486",
+    "Roles": [
+     {
+      "Ref": "CIS44EventsRuleRole20880591"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 4.4/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "CIS44AutoEventRule4F57B1C1": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate CIS 1.4.0 4.4 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.4.0/rule/4.4"
+          ]
+         ]
+        }
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "CIS_1.4.0_4.4_AutoTrigger",
+    "State": {
+     "Ref": "CIS14044AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "CIS44EventsRuleRole20880591",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 4.4/AutoEventRule/Resource"
+   }
+  },
+  "RemapCIS45BA220FAB": {
+   "Type": "AWS::SSM::Parameter",
+   "Properties": {
+    "Type": "String",
+    "Value": "4.1",
+    "Description": "Remap the CIS 4.5 finding to CIS 4.1 remediation",
+    "Name": "/Solutions/SO0111/CIS/1.4.0/4.5/remap"
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/Remap CIS 4.5/Resource"
+   }
+  },
+  "CIS45EventsRuleRoleEE42499C": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 4.5/EventsRuleRole/Resource"
+   }
+  },
+  "CIS45EventsRuleRoleDefaultPolicy1CAB3FDD": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "CIS45EventsRuleRoleDefaultPolicy1CAB3FDD",
+    "Roles": [
+     {
+      "Ref": "CIS45EventsRuleRoleEE42499C"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 4.5/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "CIS45AutoEventRuleC78D023C": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate CIS 1.4.0 4.5 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.4.0/rule/4.5"
+          ]
+         ]
+        }
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "CIS_1.4.0_4.5_AutoTrigger",
+    "State": {
+     "Ref": "CIS14045AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "CIS45EventsRuleRoleEE42499C",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 4.5/AutoEventRule/Resource"
+   }
+  },
+  "RemapCIS462B8741FC": {
+   "Type": "AWS::SSM::Parameter",
+   "Properties": {
+    "Type": "String",
+    "Value": "4.1",
+    "Description": "Remap the CIS 4.6 finding to CIS 4.1 remediation",
+    "Name": "/Solutions/SO0111/CIS/1.4.0/4.6/remap"
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/Remap CIS 4.6/Resource"
+   }
+  },
+  "CIS46EventsRuleRole5B33EBE0": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 4.6/EventsRuleRole/Resource"
+   }
+  },
+  "CIS46EventsRuleRoleDefaultPolicy8E4D2D36": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "CIS46EventsRuleRoleDefaultPolicy8E4D2D36",
+    "Roles": [
+     {
+      "Ref": "CIS46EventsRuleRole5B33EBE0"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 4.6/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "CIS46AutoEventRuleDA89CA73": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate CIS 1.4.0 4.6 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.4.0/rule/4.6"
+          ]
+         ]
+        }
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "CIS_1.4.0_4.6_AutoTrigger",
+    "State": {
+     "Ref": "CIS14046AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "CIS46EventsRuleRole5B33EBE0",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 4.6/AutoEventRule/Resource"
+   }
+  },
+  "RemapCIS4763C7ADF6": {
+   "Type": "AWS::SSM::Parameter",
+   "Properties": {
+    "Type": "String",
+    "Value": "4.1",
+    "Description": "Remap the CIS 4.7 finding to CIS 4.1 remediation",
+    "Name": "/Solutions/SO0111/CIS/1.4.0/4.7/remap"
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/Remap CIS 4.7/Resource"
+   }
+  },
+  "CIS47EventsRuleRoleD96B6CEE": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 4.7/EventsRuleRole/Resource"
+   }
+  },
+  "CIS47EventsRuleRoleDefaultPolicy768F1654": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "CIS47EventsRuleRoleDefaultPolicy768F1654",
+    "Roles": [
+     {
+      "Ref": "CIS47EventsRuleRoleD96B6CEE"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 4.7/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "CIS47AutoEventRule19309C45": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate CIS 1.4.0 4.7 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.4.0/rule/4.7"
+          ]
+         ]
+        }
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "CIS_1.4.0_4.7_AutoTrigger",
+    "State": {
+     "Ref": "CIS14047AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "CIS47EventsRuleRoleD96B6CEE",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 4.7/AutoEventRule/Resource"
+   }
+  },
+  "RemapCIS48E6834A2C": {
+   "Type": "AWS::SSM::Parameter",
+   "Properties": {
+    "Type": "String",
+    "Value": "4.1",
+    "Description": "Remap the CIS 4.8 finding to CIS 4.1 remediation",
+    "Name": "/Solutions/SO0111/CIS/1.4.0/4.8/remap"
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/Remap CIS 4.8/Resource"
+   }
+  },
+  "CIS48EventsRuleRoleB517825D": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 4.8/EventsRuleRole/Resource"
+   }
+  },
+  "CIS48EventsRuleRoleDefaultPolicy8F715B86": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "CIS48EventsRuleRoleDefaultPolicy8F715B86",
+    "Roles": [
+     {
+      "Ref": "CIS48EventsRuleRoleB517825D"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 4.8/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "CIS48AutoEventRuleE7C8273E": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate CIS 1.4.0 4.8 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.4.0/rule/4.8"
+          ]
+         ]
+        }
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "CIS_1.4.0_4.8_AutoTrigger",
+    "State": {
+     "Ref": "CIS14048AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "CIS48EventsRuleRoleB517825D",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 4.8/AutoEventRule/Resource"
+   }
+  },
+  "RemapCIS4969D6E871": {
+   "Type": "AWS::SSM::Parameter",
+   "Properties": {
+    "Type": "String",
+    "Value": "4.1",
+    "Description": "Remap the CIS 4.9 finding to CIS 4.1 remediation",
+    "Name": "/Solutions/SO0111/CIS/1.4.0/4.9/remap"
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/Remap CIS 4.9/Resource"
+   }
+  },
+  "CIS49EventsRuleRole09A7B9BF": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 4.9/EventsRuleRole/Resource"
+   }
+  },
+  "CIS49EventsRuleRoleDefaultPolicy5F3935D1": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "CIS49EventsRuleRoleDefaultPolicy5F3935D1",
+    "Roles": [
+     {
+      "Ref": "CIS49EventsRuleRole09A7B9BF"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 4.9/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "CIS49AutoEventRuleC0E09706": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate CIS 1.4.0 4.9 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.4.0/rule/4.9"
+          ]
+         ]
+        }
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "CIS_1.4.0_4.9_AutoTrigger",
+    "State": {
+     "Ref": "CIS14049AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "CIS49EventsRuleRole09A7B9BF",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 4.9/AutoEventRule/Resource"
+   }
+  },
+  "RemapCIS4109C2CB6CF": {
+   "Type": "AWS::SSM::Parameter",
+   "Properties": {
+    "Type": "String",
+    "Value": "4.1",
+    "Description": "Remap the CIS 4.10 finding to CIS 4.1 remediation",
+    "Name": "/Solutions/SO0111/CIS/1.4.0/4.10/remap"
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/Remap CIS 4.10/Resource"
+   }
+  },
+  "CIS410EventsRuleRoleC9CD16A0": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 4.10/EventsRuleRole/Resource"
+   }
+  },
+  "CIS410EventsRuleRoleDefaultPolicy5B803464": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "CIS410EventsRuleRoleDefaultPolicy5B803464",
+    "Roles": [
+     {
+      "Ref": "CIS410EventsRuleRoleC9CD16A0"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 4.10/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "CIS410AutoEventRule2E8AEE61": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate CIS 1.4.0 4.10 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.4.0/rule/4.10"
+          ]
+         ]
+        }
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "CIS_1.4.0_4.10_AutoTrigger",
+    "State": {
+     "Ref": "CIS140410AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "CIS410EventsRuleRoleC9CD16A0",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 4.10/AutoEventRule/Resource"
+   }
+  },
+  "RemapCIS41199731806": {
+   "Type": "AWS::SSM::Parameter",
+   "Properties": {
+    "Type": "String",
+    "Value": "4.1",
+    "Description": "Remap the CIS 4.11 finding to CIS 4.1 remediation",
+    "Name": "/Solutions/SO0111/CIS/1.4.0/4.11/remap"
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/Remap CIS 4.11/Resource"
+   }
+  },
+  "CIS411EventsRuleRole5D7249F6": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 4.11/EventsRuleRole/Resource"
+   }
+  },
+  "CIS411EventsRuleRoleDefaultPolicy7E2B112B": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "CIS411EventsRuleRoleDefaultPolicy7E2B112B",
+    "Roles": [
+     {
+      "Ref": "CIS411EventsRuleRole5D7249F6"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 4.11/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "CIS411AutoEventRule4E3813D7": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate CIS 1.4.0 4.11 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.4.0/rule/4.11"
+          ]
+         ]
+        }
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "CIS_1.4.0_4.11_AutoTrigger",
+    "State": {
+     "Ref": "CIS140411AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "CIS411EventsRuleRole5D7249F6",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 4.11/AutoEventRule/Resource"
+   }
+  },
+  "RemapCIS4126F2676EE": {
+   "Type": "AWS::SSM::Parameter",
+   "Properties": {
+    "Type": "String",
+    "Value": "4.1",
+    "Description": "Remap the CIS 4.12 finding to CIS 4.1 remediation",
+    "Name": "/Solutions/SO0111/CIS/1.4.0/4.12/remap"
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/Remap CIS 4.12/Resource"
+   }
+  },
+  "CIS412EventsRuleRole4412F253": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 4.12/EventsRuleRole/Resource"
+   }
+  },
+  "CIS412EventsRuleRoleDefaultPolicy8981AB99": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "CIS412EventsRuleRoleDefaultPolicy8981AB99",
+    "Roles": [
+     {
+      "Ref": "CIS412EventsRuleRole4412F253"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 4.12/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "CIS412AutoEventRule72B16288": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate CIS 1.4.0 4.12 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.4.0/rule/4.12"
+          ]
+         ]
+        }
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "CIS_1.4.0_4.12_AutoTrigger",
+    "State": {
+     "Ref": "CIS140412AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "CIS412EventsRuleRole4412F253",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 4.12/AutoEventRule/Resource"
+   }
+  },
+  "RemapCIS4136D7F251F": {
+   "Type": "AWS::SSM::Parameter",
+   "Properties": {
+    "Type": "String",
+    "Value": "4.1",
+    "Description": "Remap the CIS 4.13 finding to CIS 4.1 remediation",
+    "Name": "/Solutions/SO0111/CIS/1.4.0/4.13/remap"
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/Remap CIS 4.13/Resource"
+   }
+  },
+  "CIS413EventsRuleRoleB7C70E12": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 4.13/EventsRuleRole/Resource"
+   }
+  },
+  "CIS413EventsRuleRoleDefaultPolicyC5F97B28": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "CIS413EventsRuleRoleDefaultPolicyC5F97B28",
+    "Roles": [
+     {
+      "Ref": "CIS413EventsRuleRoleB7C70E12"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 4.13/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "CIS413AutoEventRule62C47017": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate CIS 1.4.0 4.13 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.4.0/rule/4.13"
+          ]
+         ]
+        }
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "CIS_1.4.0_4.13_AutoTrigger",
+    "State": {
+     "Ref": "CIS140413AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "CIS413EventsRuleRoleB7C70E12",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 4.13/AutoEventRule/Resource"
+   }
+  },
+  "RemapCIS414C63DD9AD": {
+   "Type": "AWS::SSM::Parameter",
+   "Properties": {
+    "Type": "String",
+    "Value": "4.1",
+    "Description": "Remap the CIS 4.14 finding to CIS 4.1 remediation",
+    "Name": "/Solutions/SO0111/CIS/1.4.0/4.14/remap"
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/Remap CIS 4.14/Resource"
+   }
+  },
+  "CIS414EventsRuleRole99297601": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 4.14/EventsRuleRole/Resource"
+   }
+  },
+  "CIS414EventsRuleRoleDefaultPolicyDF43994D": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "CIS414EventsRuleRoleDefaultPolicyDF43994D",
+    "Roles": [
+     {
+      "Ref": "CIS414EventsRuleRole99297601"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 4.14/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "CIS414AutoEventRule1A15EB17": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate CIS 1.4.0 4.14 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.4.0/rule/4.14"
+          ]
+         ]
+        }
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "CIS_1.4.0_4.14_AutoTrigger",
+    "State": {
+     "Ref": "CIS140414AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "CIS414EventsRuleRole99297601",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 4.14/AutoEventRule/Resource"
+   }
+  },
+  "CIS53EventsRuleRole27FDB3E3": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "events.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 5.3/EventsRuleRole/Resource"
+   }
+  },
+  "CIS53EventsRuleRoleDefaultPolicyDD464B51": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "CIS53EventsRuleRoleDefaultPolicyDD464B51",
+    "Roles": [
+     {
+      "Ref": "CIS53EventsRuleRole27FDB3E3"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 5.3/EventsRuleRole/DefaultPolicy/Resource"
+   }
+  },
+  "CIS53AutoEventRule36749F6F": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "Description": "Remediate CIS 1.4.0 5.3 automatic remediation trigger event rule.",
+    "EventPattern": {
+     "source": [
+      "aws.securityhub"
+     ],
+     "detail-type": [
+      "Security Hub Findings - Imported"
+     ],
+     "detail": {
+      "findings": {
+       "GeneratorId": [
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.4.0/rule/5.3"
+          ]
+         ]
+        }
+       ],
+       "Workflow": {
+        "Status": [
+         "NEW"
+        ]
+       },
+       "Compliance": {
+        "Status": [
+         "FAILED",
+         "WARNING"
+        ]
+       },
+       "RecordState": [
+        "ACTIVE"
+       ]
+      }
+     }
+    },
+    "Name": "CIS_1.4.0_5.3_AutoTrigger",
+    "State": {
+     "Ref": "CIS14053AutoTrigger"
+    },
+    "Targets": [
+     {
+      "Arn": {
+       "Ref": "SsmParameterValueSolutionsSO0111OrchestratorArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "Id": "Target0",
+      "RoleArn": {
+       "Fn::GetAtt": [
+        "CIS53EventsRuleRole27FDB3E3",
+        "Arn"
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CIS140Stack/CIS 5.3/AutoEventRule/Resource"
+   }
+  }
+ },
+ "Mappings": {
+  "SourceCode": {
+   "General": {
+    "S3Bucket": "binh-sharr-20230314",
+    "KeyPrefix": "aws-security-hub-automated-response-and-remediation/v1.5.1"
+   }
+  }
+ }
+}

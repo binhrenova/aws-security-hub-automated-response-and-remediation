@@ -26,6 +26,7 @@ Solution Landing Page
     - [Build and Deploy](#build-and-deploy)
       - [Build the solution](#build-the-solution)
       - [Run Unit Tests](#run-unit-tests)
+    - [Create required buckets](#create-required-buckets)
     - [Upload to your buckets](#upload-to-your-buckets)
   - [Deploy](#deploy)
 - [File structure](#file-structure)
@@ -183,6 +184,8 @@ chmod +x build-s3-dist.sh
 build-s3-dist.sh -b <bucketname> -v <version>
 ```
 
+Here is an example: `build-s3-dist-example.txt`
+
 #### Run Unit Tests
 
 Some Python unit tests execute AWS API calls. The calls that create, read, or modify resources are stubbed, but some
@@ -197,6 +200,19 @@ chmod +x ./run-unit-tests.sh
 
 Confirm that all unit tests pass.
 
+### Create required buckets
+
+- `<bucketname>-reference`
+- `<bucketname>-ap-southeast-1`
+
+Here is an example of S3 CLI:
+```bash
+aws s3api create-bucket \
+    --bucket my-bucket \
+    --region ap-southeast-1 \
+    --create-bucket-configuration LocationConstraint=ap-southeast-1
+```
+
 ### Upload to your buckets
 
 **Note**: Verify bucket ownership before uploading.
@@ -207,9 +223,16 @@ Use a tool such as the AWS S3 CLI "sync" command to upload your templates to the
 
 <a name="deploy"></a>
 
+```bash
+chmod +x upload-s3-dist.sh
+./upload-s3-dist.sh ap-southeast-1
+```
+
 ## Deploy
 
 See the [Automated Security Response on AWS Implementation Guide](https://docs.aws.amazon.com/solutions/latest/automated-security-response-on-aws/solution-overview.html) for deployment instructions, using the link to the SolutionDeployStack.template from your bucket, rather than the one for AWS Solutions. Ex. https://mybucket-reference.s3.amazonaws.com/aws-security-hub-automated-response-and-remediation/v1.3.0.mybuild/aws-sharr-deploy.template
+
+> **Deployment**: https://docs.aws.amazon.com/solutions/latest/automated-security-response-on-aws/deployment.html
 
 <a name="file-structure"></a>
 # File structure

@@ -1,0 +1,98 @@
+❯ ./build-s3-dist.sh -b binh-sharr-20230314 -v v1.5.1 -t
+------------------------------------------------------------------------------
+Building AWS Security Hub Automated Response & Remediation (DEV-SO0111) version v1.5.1 for bucket binh-sharr-20230314
+------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+[Init] Create folders
+------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+[Pack] Lambda Layer (used by playbooks)
+------------------------------------------------------------------------------
+~/Documents/renova/github/aws-security-hub-automated-response-and-remediation/deployment/temp ~/Documents/renova/github/aws-security-hub-automated-response-and-remediation/deployment
+~/Documents/renova/github/aws-security-hub-automated-response-and-remediation/deployment
+~/Documents/renova/github/aws-security-hub-automated-response-and-remediation/deployment/temp/source/solution_deploy/lambdalayer ~/Documents/renova/github/aws-security-hub-automated-response-and-remediation/deployment
+  adding: python/ (stored 0%)
+  adding: python/sechub_findings.py (deflated 73%)
+  adding: python/metrics.py (deflated 72%)
+  adding: python/applogger.py (deflated 67%)
+  adding: python/awsapi_cached_client.py (deflated 70%)
+  adding: python/logger.py (deflated 68%)
+  adding: python/utils.py (deflated 60%)
+~/Documents/renova/github/aws-security-hub-automated-response-and-remediation/deployment
+------------------------------------------------------------------------------
+[Pack] Custom Action Lambda
+------------------------------------------------------------------------------
+~/Documents/renova/github/aws-security-hub-automated-response-and-remediation/source/solution_deploy/source ~/Documents/renova/github/aws-security-hub-automated-response-and-remediation/deployment
+  adding: action_target_provider.py (deflated 69%)
+  adding: cfnresponse.py (deflated 57%)
+~/Documents/renova/github/aws-security-hub-automated-response-and-remediation/deployment
+------------------------------------------------------------------------------
+[Pack] Wait Provider Lambda
+------------------------------------------------------------------------------
+~/Documents/renova/github/aws-security-hub-automated-response-and-remediation/source/solution_deploy/source ~/Documents/renova/github/aws-security-hub-automated-response-and-remediation/deployment
+  adding: wait_provider.py (deflated 62%)
+  adding: cfnresponse.py (deflated 57%)
+------------------------------------------------------------------------------
+[Pack] Orchestrator Lambdas
+------------------------------------------------------------------------------
+~/Documents/renova/github/aws-security-hub-automated-response-and-remediation/source/Orchestrator ~/Documents/renova/github/aws-security-hub-automated-response-and-remediation/source/solution_deploy/source ~/Documents/renova/github/aws-security-hub-automated-response-and-remediation/deployment
+  adding: check_ssm_doc_state.py (deflated 67%)
+  adding: check_ssm_execution.py (deflated 72%)
+  adding: exec_ssm_doc.py (deflated 67%)
+  adding: get_approval_requirement.py (deflated 66%)
+  adding: send_notifications.py (deflated 70%)
+~/Documents/renova/github/aws-security-hub-automated-response-and-remediation/source/solution_deploy/source ~/Documents/renova/github/aws-security-hub-automated-response-and-remediation/deployment
+------------------------------------------------------------------------------
+[Create] Playbooks
+------------------------------------------------------------------------------
+Create AFSBP playbook
+~/Documents/renova/github/aws-security-hub-automated-response-and-remediation/source/playbooks/AFSBP ~/Documents/renova/github/aws-security-hub-automated-response-and-remediation/source/solution_deploy/source ~/Documents/renova/github/aws-security-hub-automated-response-and-remediation/deployment
+[Info at /AFSBPStack/SourceCode] Consider making this CfnMapping a lazy mapping by providing `lazy: true`: either no findInMap was called or every findInMap could be immediately resolved without using Fn::FindInMap
+Successfully synthesized to /Users/leon/Documents/renova/github/aws-security-hub-automated-response-and-remediation/source/playbooks/AFSBP/cdk.out
+Supply a stack id (AFSBPMemberStack, AFSBPStack) to display its template.
+****************************************************
+*** Newer version of CDK is available [2.68.0]   ***
+*** Upgrade recommended (npm install -g aws-cdk) ***
+****************************************************
+
+~/Documents/renova/github/aws-security-hub-automated-response-and-remediation/source/solution_deploy/source ~/Documents/renova/github/aws-security-hub-automated-response-and-remediation/deployment
+Create CIS120 playbook
+~/Documents/renova/github/aws-security-hub-automated-response-and-remediation/source/playbooks/CIS120 ~/Documents/renova/github/aws-security-hub-automated-response-and-remediation/source/solution_deploy/source ~/Documents/renova/github/aws-security-hub-automated-response-and-remediation/deployment
+[Info at /CIS120Stack/SourceCode] Consider making this CfnMapping a lazy mapping by providing `lazy: true`: either no findInMap was called or every findInMap could be immediately resolved without using Fn::FindInMap
+Successfully synthesized to /Users/leon/Documents/renova/github/aws-security-hub-automated-response-and-remediation/source/playbooks/CIS120/cdk.out
+Supply a stack id (CIS120MemberStack, CIS120Stack) to display its template.
+
+~/Documents/renova/github/aws-security-hub-automated-response-and-remediation/source/solution_deploy/source ~/Documents/renova/github/aws-security-hub-automated-response-and-remediation/deployment
+Create CIS140 playbook
+~/Documents/renova/github/aws-security-hub-automated-response-and-remediation/source/playbooks/CIS140 ~/Documents/renova/github/aws-security-hub-automated-response-and-remediation/source/solution_deploy/source ~/Documents/renova/github/aws-security-hub-automated-response-and-remediation/deployment
+[Info at /CIS140Stack/SourceCode] Consider making this CfnMapping a lazy mapping by providing `lazy: true`: either no findInMap was called or every findInMap could be immediately resolved without using Fn::FindInMap
+Successfully synthesized to /Users/leon/Documents/renova/github/aws-security-hub-automated-response-and-remediation/source/playbooks/CIS140/cdk.out
+Supply a stack id (CIS140MemberStack, CIS140Stack) to display its template.
+
+~/Documents/renova/github/aws-security-hub-automated-response-and-remediation/source/solution_deploy/source ~/Documents/renova/github/aws-security-hub-automated-response-and-remediation/deployment
+Create PCI321 playbook
+~/Documents/renova/github/aws-security-hub-automated-response-and-remediation/source/playbooks/PCI321 ~/Documents/renova/github/aws-security-hub-automated-response-and-remediation/source/solution_deploy/source ~/Documents/renova/github/aws-security-hub-automated-response-and-remediation/deployment
+[Info at /PCI321Stack/SourceCode] Consider making this CfnMapping a lazy mapping by providing `lazy: true`: either no findInMap was called or every findInMap could be immediately resolved without using Fn::FindInMap
+Successfully synthesized to /Users/leon/Documents/renova/github/aws-security-hub-automated-response-and-remediation/source/playbooks/PCI321/cdk.out
+Supply a stack id (PCI321MemberStack, PCI321Stack) to display its template.
+
+~/Documents/renova/github/aws-security-hub-automated-response-and-remediation/source/solution_deploy/source ~/Documents/renova/github/aws-security-hub-automated-response-and-remediation/deployment
+Create SC playbook
+~/Documents/renova/github/aws-security-hub-automated-response-and-remediation/source/playbooks/SC ~/Documents/renova/github/aws-security-hub-automated-response-and-remediation/source/solution_deploy/source ~/Documents/renova/github/aws-security-hub-automated-response-and-remediation/deployment
+Successfully synthesized to /Users/leon/Documents/renova/github/aws-security-hub-automated-response-and-remediation/source/playbooks/SC/cdk.out
+Supply a stack id (SCMemberStack, SCStack) to display its template.
+
+~/Documents/renova/github/aws-security-hub-automated-response-and-remediation/source/solution_deploy/source ~/Documents/renova/github/aws-security-hub-automated-response-and-remediation/deployment
+------------------------------------------------------------------------------
+[Create] Deployment Templates
+------------------------------------------------------------------------------
+~/Documents/renova/github/aws-security-hub-automated-response-and-remediation/source/solution_deploy ~/Documents/renova/github/aws-security-hub-automated-response-and-remediation/source/solution_deploy/source ~/Documents/renova/github/aws-security-hub-automated-response-and-remediation/deployment
+[Info at /MemberStack/NestedStackFactory/SourceCode] Consider making this CfnMapping a lazy mapping by providing `lazy: true`: either no findInMap was called or every findInMap could be immediately resolved without using Fn::FindInMap
+[Info at /MemberStack/Solution] Consider making this CfnMapping a lazy mapping by providing `lazy: true`: either no findInMap was called or every findInMap could be immediately resolved without using Fn::FindInMap
+[Info at /SolutionDeployStack/SourceCode] Consider making this CfnMapping a lazy mapping by providing `lazy: true`: either no findInMap was called or every findInMap could be immediately resolved without using Fn::FindInMap
+[Info at /SolutionDeployStack/mappings] Consider making this CfnMapping a lazy mapping by providing `lazy: true`: either no findInMap was called or every findInMap could be immediately resolved without using Fn::FindInMap
+[Info at /SolutionDeployStack/Solution] Consider making this CfnMapping a lazy mapping by providing `lazy: true`: either no findInMap was called or every findInMap could be immediately resolved without using Fn::FindInMap
+Successfully synthesized to /Users/leon/Documents/renova/github/aws-security-hub-automated-response-and-remediation/source/solution_deploy/cdk.out
+Supply a stack id (MemberRoleStack, MemberStack, OrchestratorLogStack, RunbookStack, SolutionDeployStack) to display its template.
+
+~/Documents/renova/github/aws-security-hub-automated-response-and-remediation/source/solution_deploy/source ~/Documents/renova/github/aws-security-hub-automated-response-and-remediation/deployment
