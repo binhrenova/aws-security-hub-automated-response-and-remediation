@@ -1,0 +1,47 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: Apache-2.0
+---
+schemaVersion: "0.3"
+description: |
+  ### Document name - AWSConfigRemediation-EnableMinorVersionUpgradeOnRDSDBInstance
+
+  ## What does this document do?
+  This document enables AutoMinorVersionUpgrade on the Amazon Relational Database Service (Amazon RDS) instance using the [ModifyDBInstance](https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBInstance.html) API.
+
+  ## Input parameters
+  * AutomationAssumeRole: (Required) The ARN of the role that allows Automation to perform the actions on your behalf.
+  * DbiResourceId: (Required) Resource ID of the Amazon RDS instance to be modified.
+
+  ## Output parameters
+  * ModifyDBInstance.Output: The standard HTTP response from the ModifyDBInstance API.
+
+  ## Security Standards / Controls
+  * CIS v1.4.0: N/A
+  * CIS v1.5.0: 2.3.2
+
+assumeRole: "{{ AutomationAssumeRole }}"
+parameters:
+  AutomationAssumeRole:
+    type: String
+    description: (Required) The ARN of the role that allows Automation to perform the actions on your behalf.
+    allowedPattern: '^arn:(?:aws|aws-us-gov|aws-cn):iam::\d{12}:role/[\w+=,.@-]+$'
+  DBInstanceIdentifier:
+    type: String
+    description: (Required) Identifier of the Amazon RDS instance for which AutoMinorVersionUpgrade needs to be enabled.
+    allowedPattern: "^(?!.*--)[a-zA-Z][a-zA-Z0-9.,$;-]{0,58}[^-]$"
+outputs:
+  - ModifyDBInstance.Output
+mainSteps:
+  - name: ModifyDBInstance
+    action: 'aws:executeScript'
+    outputs:
+      - Name: Output
+        Selector: $.Payload.response
+        Type: StringMap
+    inputs:
+      InputPayload:
+        DBInstanceIdentifier: "{{DBInstanceIdentifier}}"
+      Runtime: python3.8
+      Handler: lambda_handler
+      Script: |-
+        %%SCRIPT=enable_minor_version_upgrade_rds.py%%

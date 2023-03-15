@@ -27,6 +27,7 @@ Solution Landing Page
       - [Build the solution](#build-the-solution)
       - [Run Unit Tests](#run-unit-tests)
     - [Create required buckets](#create-required-buckets)
+    - [Modify buckets policy](#modify-buckets-policy)
     - [Upload to your buckets](#upload-to-your-buckets)
   - [Deploy](#deploy)
 - [File structure](#file-structure)
@@ -181,10 +182,10 @@ Next from the *deployment* folder in your cloned repo, run build-s3-dist.sh, pas
 
 ```bash
 chmod +x build-s3-dist.sh
-build-s3-dist.sh -b <bucketname> -v <version>
+./build-s3-dist.sh -b <bucketname> -v <version>
 ```
 
-Here is an example: `build-s3-dist-example.txt`
+For bash output, here is an example: `build-s3-dist-example.txt`
 
 #### Run Unit Tests
 
@@ -211,6 +212,26 @@ aws s3api create-bucket \
     --bucket my-bucket \
     --region ap-southeast-1 \
     --create-bucket-configuration LocationConstraint=ap-southeast-1
+```
+
+### Modify buckets policy
+Make sure that the assests bucket policy has permissions to allow member account to access.
+
+Here is an example of **S3 bucket policy**:
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::<MEMBER_ID>:root"
+            },
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::<BUCKET_NAME>/*"
+        }
+    ]
+}
 ```
 
 ### Upload to your buckets
